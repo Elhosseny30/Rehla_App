@@ -1,5 +1,5 @@
-import 'package:graduationproject/core/constants/imagesAssets.dart';
-import 'package:graduationproject/core/constants/strings.dart';
+import 'package:graduationproject/core/utils/imagesAssets.dart';
+import 'package:graduationproject/core/utils/strings.dart';
 import 'package:graduationproject/features/onboarding/data/model/onBoardingModel.dart';
 
 List<OnBoardingModel> OnBoardingListDat = [

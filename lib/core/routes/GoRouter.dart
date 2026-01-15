@@ -9,7 +9,7 @@ final GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.splash, 
-      builder: (context, state) => Splash(),
+      builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: AppRoutes.homeScreen,

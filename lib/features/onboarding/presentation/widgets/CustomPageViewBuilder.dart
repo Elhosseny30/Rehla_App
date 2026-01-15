@@ -49,6 +49,8 @@ class CustomPageViewBuilder extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 16.0),
                 child: Text(
                   OnBoardingListDat[index].text,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Satoshi',

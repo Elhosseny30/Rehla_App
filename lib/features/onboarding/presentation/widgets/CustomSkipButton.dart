@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/Routes/appRoutes.dart';
-import 'package:graduationproject/core/constants/colors.dart';
+import 'package:graduationproject/core/utils/colors.dart';
 
 class CustomSkipButton extends StatelessWidget {
   const CustomSkipButton({super.key});

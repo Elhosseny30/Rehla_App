@@ -5,7 +5,7 @@ class Assets {
   /// Assets for imagesFirstonbaordingillustration
   /// assets/images/Firstonbaordingillustration.png
   static const String imagesFirstonbaordingillustration = "assets/images/Firstonbaordingillustration.png";
-
+  
   /// Assets for imagesRehlatypo
   /// assets/images/Rehlatypo.png
   static const String imagesRehlatypo = "assets/images/Rehlatypo.png";
