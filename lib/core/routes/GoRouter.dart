@@ -2,7 +2,6 @@ import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/features/auth/presentation/screens/login.dart';
 import 'package:graduationproject/features/onboarding/presentation/screens/onboardingscreen.dart';
-import 'package:graduationproject/features/splash/presentation/screens/splash.dart';
 import 'package:graduationproject/homeScreen.dart';
 
 final GoRouter router = GoRouter(
