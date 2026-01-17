@@ -69,6 +69,8 @@ class ForgetPassword extends StatelessWidget {
                 CustomTitleTextFormField(title: "Email / Username"),
                 SizedBox(height: 10),
                 CustomTextField(
+                  selectedNumber: null,
+                  tappedEnableBorder: false,
                   hintText: "Example@example.com",
                   isPassword: false,
                   controller: emailController,

@@ -24,7 +24,6 @@ class _SignUpState extends State<SignUp> {
   int? selectedIndex;
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -56,9 +55,10 @@ class _SignUpState extends State<SignUp> {
                     child: Align(
                       alignment: Alignment.center,
                       child: CustomWelcomeTextWidget(
-                        
                         fontWeight: FontWeight.w500,
-                        color: selectedIndex==1? MyColors.blueColor: MyColors.mainColor,
+                        color: selectedIndex == 1
+                            ? MyColors.blueColor
+                            : MyColors.mainColor,
                         text: "New Account",
                         size: 20,
                       ),
@@ -68,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: CustomBackTranslateButton(
-                        selectedNumber:selectedIndex,
+                        selectedNumber: selectedIndex,
                         iconSize: 25,
                         width: 80,
                         height: 50,
@@ -82,8 +82,8 @@ class _SignUpState extends State<SignUp> {
               ),
               SizedBox(height: 30),
               DotsWidget(
-                selectedNumber: selectedIndex,
-              ),
+                currentPage: 0,
+                selectedNumber: selectedIndex),
               SizedBox(height: 100),
               Row(
                 children: [
@@ -156,26 +156,40 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
 
-              SizedBox(height: 50,),
-              if(selectedIndex != null)...[
+              SizedBox(height: 50),
+              if (selectedIndex != null) ...[
                 CustomElevatedButton(
                   selectedNumber: selectedIndex,
-                  text: "Continue", onPressed: (){})
+                  text: "Continue",
+                  onPressed: () {
+                    if (selectedIndex == 0 || selectedIndex == 2) {
+                      (context).push(AppRoutes.patientCareGiverScreen);
+                    }
+                    else{
+                      (context).push(AppRoutes.doctorScreen);
+                    }
+                  },
+                ),
               ],
-              SizedBox(height: 90,),
-               Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomWelcomeTextWidget(
-                        
-                          text: "Have an account? ", size: 15, fontWeight: FontWeight.w400, color: MyColors.blackColor),
-                        CustomInkWellSignUp(
-                          selectedNumber:selectedIndex,
-                          text: "Log in", onTap: () {
-                          context.pop();
-                        }),
-                      ],
-                    ),
+              SizedBox(height: 90),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomWelcomeTextWidget(
+                    text: "Have an account? ",
+                    size: 15,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.blackColor,
+                  ),
+                  CustomInkWellSignUp(
+                    selectedNumber: selectedIndex,
+                    text: "Log in",
+                    onTap: () {
+                      context.pop();
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
         ),

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 
 class DotsWidget extends StatelessWidget {
-  const DotsWidget({super.key, this.selectedNumber});
+  const DotsWidget({super.key, this.selectedNumber, required this.currentPage});
   final int? selectedNumber;
+  final int currentPage;
   @override
   Widget build(BuildContext context) {
-    final int currentPage =0;
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -33,4 +34,5 @@ class DotsWidget extends StatelessWidget {
       ],
     );
   }
+
 }

@@ -54,6 +54,8 @@ class LoginScreen extends StatelessWidget {
                     CustomTitleTextFormField(title: "Email / Username"),
                     SizedBox(height: 10),
                     CustomTextField(
+                      selectedNumber: null,
+                      tappedEnableBorder: false,
                       hintText: "Example@example.com",
                       isPassword: false,
                       controller: emailController,
@@ -73,6 +75,9 @@ class LoginScreen extends StatelessWidget {
                     CustomTitleTextFormField(title: "Password"),
                     SizedBox(height: 10),
                     CustomTextField(
+                      selectedNumber: null,
+                      validator: (value){},
+                      tappedEnableBorder: false,
                       hintText: "*****************",
                       isPassword: true,
                       controller: passwordController,

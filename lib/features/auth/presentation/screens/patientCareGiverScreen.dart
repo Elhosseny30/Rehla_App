@@ -1,0 +1,292 @@
+import 'dart:ffi';
+
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduationproject/core/routes/appRoutes.dart';
+import 'package:graduationproject/core/utils/colors.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/CustomBuildSocailIcon.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/CustomElevatedButton.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/CustomInkWellSignUp.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/CustomTextField.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/CustomTitleTextFormField.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/Custom_Back_Translate_Button.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/DotsWidgets.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/OrCointinueWithWidget.dart';
+import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
+
+class PatientCareGiverScreen extends StatelessWidget {
+  PatientCareGiverScreen({super.key});
+  final TextEditingController firstNameText = TextEditingController();
+  final TextEditingController lastNameText = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: ListView(
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: CustomBackTranslateButton(
+                          selectedNumber: null,
+                          iconSize: 25,
+                          width: 80,
+                          height: 50,
+                          icon: Icons.arrow_back_ios_new,
+                          onTap: () {
+                            context.pop();
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: CustomWelcomeTextWidget(
+                        fontWeight: FontWeight.w500,
+                        color: MyColors.mainColor,
+
+                        text: "New Account",
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: CustomBackTranslateButton(
+                        selectedNumber: null,
+                        iconSize: 25,
+                        width: 80,
+                        height: 50,
+                        icon: Icons.translate,
+                        // TODO
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
+              DotsWidget(currentPage: 1, selectedNumber: null),
+
+              SizedBox(height: 50),
+              Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: CustomTitleTextFormField(title: "First name"),
+                        ),
+                        SizedBox(height: 10),
+                        CustomTextField(
+                          selectedNumber: null,
+                          validator: (value) {},
+                          tappedEnableBorder: true,
+                          hintText: '',
+                          isPassword: false,
+                          controller: firstNameText,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: CustomTitleTextFormField(title: "Last name"),
+                        ),
+                        SizedBox(height: 10),
+                        CustomTextField(
+                          selectedNumber: null,
+                          tappedEnableBorder: true,
+                          hintText: '',
+                          isPassword: false,
+                          controller: lastNameText,
+                          validator: (value) {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [
+                    CustomTitleTextFormField(title: "Username "),
+                    CustomWelcomeTextWidget(
+                      text: '(optional)',
+                      size: 20,
+                      fontWeight: FontWeight.w400,
+                      color: MyColors.blackColor,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              CustomTextField(
+                selectedNumber: null,
+                tappedEnableBorder: true,
+                hintText: '@username',
+                isPassword: false,
+                controller: lastNameText,
+                validator: (value) {},
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [
+                    CustomTitleTextFormField(title: "phone number "),
+                    CustomWelcomeTextWidget(
+                      text: '(optional)',
+                      size: 20,
+                      fontWeight: FontWeight.w400,
+                      color: MyColors.blackColor,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              CustomTextField(
+                selectedNumber: null,
+                tappedEnableBorder: true,
+                hintText: '+20',
+                isPassword: false,
+                controller: lastNameText,
+                validator: (value) {},
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: CustomTitleTextFormField(title: "Email"),
+              ),
+              SizedBox(height: 10),
+              CustomTextField(
+                selectedNumber: null,
+                validator: (value) {},
+                tappedEnableBorder: true,
+                hintText: 'Example@example.com',
+                isPassword: false,
+                controller: firstNameText,
+              ),
+
+              SizedBox(height: 20),
+              CustomWelcomeTextWidget(
+                text: "By continuing, you agree to",
+                size: 14,
+                fontWeight: FontWeight.w400,
+                color: MyColors.blackColor,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomWelcomeTextWidget(
+                    text: "Terms of Use",
+                    size: 14,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.mainColor,
+                  ),
+                  CustomWelcomeTextWidget(
+                    text: " and ",
+                    size: 14,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.blackColor,
+                  ),
+                  CustomWelcomeTextWidget(
+                    text: "Privacy Policy.",
+                    size: 14,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.mainColor,
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              CustomElevatedButton(
+                text: "Continue",
+                onPressed: () {},
+                selectedNumber: null,
+              ),
+              SizedBox(height: 20,),
+              OrContinueWithWidget(text: "Or fill data with"),
+              SizedBox(height: 20,),
+               Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomBuildSocialIcon(
+                          onTap: () {},
+                          icon: Icon(
+                            Icons.facebook,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                        ),
+
+                        const SizedBox(width: 15),
+
+                        CustomBuildSocialIcon(
+                          onTap: () {},
+                          icon: Icon(
+                            Icons.g_mobiledata,
+                            color: Colors.red,
+                            size: 35,
+                          ),
+                        ),
+
+                        const SizedBox(width: 15),
+
+                        CustomBuildSocialIcon(
+                          onTap: () {},
+                          icon: Icon(
+                            Icons.apple,
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                        ),
+
+                        const SizedBox(width: 15),
+
+                      
+                      ],
+                    ),
+  SizedBox(height: 20,),
+                    Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomWelcomeTextWidget(
+                    text: "Have an account? ",
+                    size: 15,
+                    fontWeight: FontWeight.w400,
+                    color: MyColors.blackColor,
+                  ),
+                  CustomInkWellSignUp(
+                    selectedNumber: null,
+                    text: "Log in",
+                    onTap: () {
+                      context.pushReplacement(AppRoutes.login);
+                    },
+                  ),
+                ],
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
