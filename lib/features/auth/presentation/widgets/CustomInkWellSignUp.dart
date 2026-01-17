@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 
 class CustomInkWellSignUp extends StatelessWidget {
-  const CustomInkWellSignUp({super.key, required this.text,required this.onTap});
+  const CustomInkWellSignUp({
+    super.key,
+    required this.text,
+    required this.onTap,
+    required this.selectedNumber,
+  });
   final String text;
   final void Function() onTap;
+  final int? selectedNumber;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -14,9 +20,12 @@ class CustomInkWellSignUp extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w400,
           fontSize: 15,
-          color: MyColors.mainColor,
+          color: selectedNumber==1? MyColors.blueColor:MyColors.mainColor,
         ),
       ),
     );
   }
+
+
+  
 }

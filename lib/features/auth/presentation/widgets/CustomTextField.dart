@@ -3,7 +3,7 @@ import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/fonts.dart';
 
 class CustomTextField extends StatefulWidget {
-  CustomTextField({
+  const CustomTextField({
     super.key,
     required this.hintText,
     required this.isPassword,

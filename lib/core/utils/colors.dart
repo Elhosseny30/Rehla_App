@@ -4,4 +4,7 @@ abstract class MyColors {
   static const mainColor = Color(0xffFF48A4);
   static const whiteColor = Colors.white;
   static const babyGreyColor = Color.fromRGBO(241, 241, 241, 0.35);
+  static const greyRegisterColorContainer = Color.fromARGB(86, 182, 178, 178);
+  static const blackColor = Colors.black;
+  static const blueColor = Color(0xff2D69E2);
 }
