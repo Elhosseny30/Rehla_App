@@ -88,6 +88,7 @@ class ForgetPassword extends StatelessWidget {
                 ),
                 SizedBox(height: 75),
                 CustomElevatedButton(
+                  isSignUpLoginDesign: false,
                   selectedNumber: null,
                   text: "Send mail", onPressed: () {}),
               ],

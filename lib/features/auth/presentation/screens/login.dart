@@ -102,6 +102,7 @@ class LoginScreen extends StatelessWidget {
 
                     //TODO
                     CustomElevatedButton(
+                      isSignUpLoginDesign: false,
                       selectedNumber: null,
                       text: "Log in", onPressed: () {}),
                     SizedBox(height: 25),

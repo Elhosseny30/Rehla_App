@@ -7,4 +7,5 @@ abstract class MyColors {
   static const greyRegisterColorContainer = Color.fromARGB(86, 182, 178, 178);
   static const blackColor = Colors.black;
   static const blueColor = Color(0xff2D69E2);
+  static const greenColor = Color(0xff45b26b);
 }

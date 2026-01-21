@@ -220,8 +220,11 @@ class DoctorScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               CustomElevatedButton(
+                isSignUpLoginDesign: false,
                 text: "Continue",
-                onPressed: () {},
+                onPressed: () {
+                  (context).push(AppRoutes.infoDoctorScreen);
+                },
                 selectedNumber: 1,
               ),
               SizedBox(height: 20,),

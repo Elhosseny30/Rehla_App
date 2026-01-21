@@ -16,14 +16,19 @@ class CustomWelcomeTextWidget extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        text,
-        style: TextStyle(
-          fontFamily: fontsApp.mainFont,
-          fontWeight: fontWeight,
-          fontSize: size,
-          color: color,
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Center(
+        child: Text(
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          text,
+          style: TextStyle(
+            fontFamily: fontsApp.mainFont,
+            fontWeight: fontWeight,
+            fontSize: size,
+            color: color,
+          ),
         ),
       ),
     );

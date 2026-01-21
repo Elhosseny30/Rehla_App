@@ -1,5 +1,4 @@
 abstract class AppRoutes {
-
   static const splash = '/';
   static const homeScreen = '/homeScreen';
   static const onBoardingScreen = '/onBoardingScreen';
@@ -8,4 +7,10 @@ abstract class AppRoutes {
   static const signUp = '/signUp';
   static const patientCareGiverScreen = '/patientCareGiverScreen';
   static const doctorScreen = '/doctorScreen';
+  static const infoDoctorScreen = '/infoDoctorScreen';
+  static const infoPatientCareGiverScreen = '/infoPatientCareGiverScreen';
+  static const infoPatientCareGiverTwo = "/infoPatientCareGiverTwo";
+  static const infoDoctorNationalID = "/infoDoctorNationalID";
+  static const setupPassword = "/setupPassword";
+  static const hekkoo = "/hekko";
 }

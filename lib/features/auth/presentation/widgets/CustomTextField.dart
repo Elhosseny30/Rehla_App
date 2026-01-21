@@ -9,7 +9,9 @@ class CustomTextField extends StatefulWidget {
     required this.isPassword,
     required this.controller,
     required this.validator,
-    required this.tappedEnableBorder, required this.selectedNumber,
+    required this.tappedEnableBorder,
+    required this.selectedNumber,
+    this.onChanged,
   });
   final String hintText;
   final bool isPassword;
@@ -17,6 +19,7 @@ class CustomTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool tappedEnableBorder;
   final int? selectedNumber;
+  final void Function(String)? onChanged;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -29,6 +32,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
       controller: widget.controller,
       validator: widget.validator,
+      onChanged: widget.onChanged,
       obscureText: widget.isPassword ? obSecureText : false,
       decoration: InputDecoration(
         suffixIcon: widget.isPassword
@@ -57,8 +61,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(width: 1, 
-          color: widget.selectedNumber == 1 ? MyColors.blueColor: MyColors.mainColor),
+          borderSide: BorderSide(
+            width: 1,
+            color: widget.selectedNumber == 1
+                ? MyColors.blueColor
+                : MyColors.mainColor,
+          ),
         ),
       ),
     );
