@@ -245,7 +245,9 @@ class PatientCareGiverScreen extends StatelessWidget {
                         fName: firstNameText.text,
                         lName: lastNameText.text,
                         uName: userName.text,
-                        phone: phoneNumber.text
+                        phone: phoneNumber.text,
+                        role: 0,
+                        
                         );
                       (context).push(AppRoutes.infoPatientCareGiverScreen);
                     } 

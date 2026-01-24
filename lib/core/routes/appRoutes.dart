@@ -11,6 +11,7 @@ abstract class AppRoutes {
   static const infoPatientCareGiverScreen = '/infoPatientCareGiverScreen';
   static const infoPatientCareGiverTwo = "/infoPatientCareGiverTwo";
   static const infoDoctorNationalID = "/infoDoctorNationalID";
-  static const setupPassword = "/setupPassword";
+  static const setupPatientPassword = "/setupPatientPassword";
+  static const setupDoctorPassword = "/setupDoctorPassword";
   static const hekkoo = "/hekko";
 }

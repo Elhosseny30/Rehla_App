@@ -3,59 +3,52 @@ import 'package:dio/dio.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/core/utils/error.dart';
 import 'package:graduationproject/features/auth/data/models/register_response_model.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_state.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_state.dart';
 
-class PatientRegisterStateCubit extends Cubit<PatientRegisterState> {
-  PatientRegisterStateCubit() : super(PatientRegisterState());
-
-  void selectRole(int role) {
-    emit(state.copyWith(userRole: role));
-  }
+class DoctorRegisterCubit extends Cubit<DoctorRegisterState> {
+  DoctorRegisterCubit() : super(DoctorRegisterState());
 
   void updateBasicInfo({
     String? fName,
     String? lName,
-    String? uName,
-    String? phone,
     String? email,
-    int?role,
+    String? phone,
+    String? userName,
+    int? role,
   }) {
     emit(
       state.copyWith(
         firstName: fName,
         lastName: lName,
-        username: uName,
-        phoneNumber: phone,
         email: email,
+        phoneNumber: phone,
+        userName: userName,
         userRole: role,
-      ),
-    );
-  }
 
-  void updateMedicalInfo({
-    String? dob,
-    String? height,
-    String? weight,
-    String? illnessStage,
-    String? journeyStage,
-    String? concern,
-  }) {
-    emit(
-      state.copyWith(
-        birthDate: dob,
-        height: height,
-        weight: weight,
-        illnessStage: illnessStage,
-        journeyStage: journeyStage,
-        currentConcern: concern,
         errorMessage: null, 
         status: RegisterStatus.initial,
       ),
     );
   }
 
-  void updateLifestyleInfo({String? role, String? hobby, String? interest}) {
-    emit(state.copyWith(dailyRole: role, hobby: hobby, interest: interest));
+  void updateClinicInfo({
+    String? city,
+    String? specialty,
+    String? clinicName,
+    String? clinicAddress,
+  }) {
+    emit(
+      state.copyWith(
+        city: city,
+        medicalSpecialty: specialty,
+        clinicName: clinicName,
+        clinicAddress: clinicAddress,
+      ),
+    );
+  }
+
+  void updateNationalID({String? id}) {
+    emit(state.copyWith(nationalID: id));
   }
 
   void updatePasswordValues(String password, String confirmedPassword) {
@@ -86,18 +79,19 @@ class PatientRegisterStateCubit extends Cubit<PatientRegisterState> {
       tempIsIsMatched = true;
       score++;
     }
-    emit(state.copyWith(
-      password: password,
-      confirmedPassword: confirmedPassword,
-      isMiniEightOrSpecialChar: tempIsMiniEightOrSpecialChar,
-      lowerUpperChars: tempIsLowerUpperChars,
-      oneNumber: tempIsOneNumber,
-      isMatched: tempIsIsMatched,
-      passwordStrength: score / 4.0,
-      errorMessage: null, 
-      status: RegisterStatus.initial,
-    ));
-    
+    emit(
+      state.copyWith(
+        password: password,
+        confirmedPassword: confirmedPassword,
+        isMiniEightOrSpecialChar: tempIsMiniEightOrSpecialChar,
+        lowerUpperChars: tempIsLowerUpperChars,
+        oneNumber: tempIsOneNumber,
+        isMatched: tempIsIsMatched,
+        passwordStrength: score / 4.0,
+        errorMessage: null, 
+        status: RegisterStatus.initial,
+      ),
+    );
   }
 
   Future<void> submitRegisterDoctor() async {
@@ -110,19 +104,20 @@ class PatientRegisterStateCubit extends Cubit<PatientRegisterState> {
         "username": state.userName,
         "phoneNumber": state.phoneNumber,
         "email": state.email,
-        "address": "Egypt",
+        "address": state.clinicAddress ?? state.city ?? "Egypt",
         "dateOfBirth": "1995-01-23",
         "gender": "Male",
-
+        "yearsOfExperience": 5,
         "password": state.password,
         "confirmPassword": state.confirmedPassword,
-        "medicalHistory": state.illnessStage,
-
+        "specialization": state.medicalSpecialty ?? "General",
+        "licenseNumber": state.nationalID,
+        "nationalIdImagePath": state.nationalID,
       };
       print("Sending data : $requestData");
 
       final response = await DioHelper.postData(
-        url: 'api/Account/Register/Patient',
+        url: 'api/Account/Register/Doctor',
         data: requestData,
       );
 

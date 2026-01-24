@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/fonts.dart';
 
 class CustomTextField extends StatefulWidget {
-  const CustomTextField({
+  CustomTextField({
     super.key,
     required this.hintText,
     required this.isPassword,
@@ -12,7 +13,9 @@ class CustomTextField extends StatefulWidget {
     required this.tappedEnableBorder,
     required this.selectedNumber,
     this.onChanged,
+    this.nationalID =false,
   });
+
   final String hintText;
   final bool isPassword;
   final TextEditingController controller;
@@ -20,6 +23,7 @@ class CustomTextField extends StatefulWidget {
   final bool tappedEnableBorder;
   final int? selectedNumber;
   final void Function(String)? onChanged;
+  bool  nationalID = false;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -30,6 +34,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: widget.nationalID == true ?TextInputType.number: TextInputType.text ,
+      inputFormatters: widget.nationalID!
+          ? [
+              FilteringTextInputFormatter.digitsOnly, 
+              LengthLimitingTextInputFormatter(14),     
+            ]
+          : [],
       controller: widget.controller,
       validator: widget.validator,
       onChanged: widget.onChanged,

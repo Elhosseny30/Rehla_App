@@ -23,43 +23,47 @@ class CustomPageViewBuilder extends StatelessWidget {
       },
       itemCount: OnBoardingListDat.length,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: EdgeInsets.only(top: OnBoardingListDat[index].height),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(
-                height: 400,
-                OnBoardingListDat[index].image,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0),
-                child: Text(
-                  OnBoardingListDat[index].title,
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontFamily: 'Satoshi',
-                    fontWeight: FontWeight.w500,
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(top: OnBoardingListDat[index].height),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  height: 400,
+                  //height: 300,
+                  OnBoardingListDat[index].image,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    OnBoardingListDat[index].title,
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontFamily: 'Satoshi',
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0),
-                child: Text(
-                  OnBoardingListDat[index].text,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Satoshi',
-                    fontWeight: FontWeight.w400,
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    OnBoardingListDat[index].text,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Satoshi',
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 40),
-            ],
+                SizedBox(height: 40),
+              ],
+            ),
           ),
         );
       },

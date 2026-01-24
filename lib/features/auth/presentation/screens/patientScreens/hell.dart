@@ -6,7 +6,9 @@ class hekko extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(name),
+      body: Center(child: Text(name,style: TextStyle(
+        fontSize: 40,
+      ),)),
     );
   }
 }

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduationproject/core/Routes/GoRouter.dart';
+import 'package:graduationproject/core/utils/DioHelper.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
   runApp(
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => PatientRegisterStateCubit()),
+        BlocProvider(create: (context) => DoctorRegisterCubit()),
       ],
       child: RehlaApp(),
     ),

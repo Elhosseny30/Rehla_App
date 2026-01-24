@@ -186,7 +186,7 @@ class InfoPatientCareGiverTwo extends StatelessWidget {
                       text: "Continue",
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          (context).push(AppRoutes.setupPassword);
+                          (context).push(AppRoutes.setupPatientPassword);
                         }
                       },
                       selectedNumber: null,

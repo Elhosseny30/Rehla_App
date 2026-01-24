@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/Routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_state.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_state.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomElevatedButton.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomPasswordChecksText.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomTextField.dart';
@@ -13,17 +13,37 @@ import 'package:graduationproject/features/auth/presentation/widgets/CustomTitle
 import 'package:graduationproject/features/auth/presentation/widgets/Custom_Back_Translate_Button.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/DotsWidgets.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
-import 'package:graduationproject/core/routes/appRoutes.dart' hide AppRoutes;
 
-class SetupPassword extends StatelessWidget {
-  SetupPassword({super.key});
-  final TextEditingController setPassword = TextEditingController();
-  final TextEditingController confirmPassword = TextEditingController();
+class SetUpDoctorPassword extends StatelessWidget {
+  SetUpDoctorPassword({super.key});
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController setPassword = TextEditingController();
+  TextEditingController confirmPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PatientRegisterStateCubit, PatientRegisterState>(
+    return BlocConsumer<DoctorRegisterCubit, DoctorRegisterState>(
+      listener: (context, state) {
+        if (state.status == RegisterStatus.success) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Account created! Redirecting to verify email..."),
+              backgroundColor: Colors.green,
+            ),
+          );
+
+          // context.go(AppRoutes.loginScreen);
+        }
+
+        if (state.status == RegisterStatus.failure && state.errorMessage != null) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage!),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
@@ -42,7 +62,7 @@ class SetupPassword extends StatelessWidget {
                             child: GestureDetector(
                               onTap: () {},
                               child: CustomBackTranslateButton(
-                                selectedNumber: null,
+                                selectedNumber: 1,
                                 iconSize: 25,
                                 width: 80,
                                 height: 50,
@@ -59,7 +79,7 @@ class SetupPassword extends StatelessWidget {
                             alignment: Alignment.center,
                             child: CustomWelcomeTextWidget(
                               fontWeight: FontWeight.w500,
-                              color: MyColors.mainColor,
+                              color: MyColors.blueColor,
 
                               text: "New Account",
                               size: 20,
@@ -70,7 +90,7 @@ class SetupPassword extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.centerRight,
                             child: CustomBackTranslateButton(
-                              selectedNumber: null,
+                              selectedNumber: 1,
                               iconSize: 25,
                               width: 80,
                               height: 50,
@@ -83,7 +103,7 @@ class SetupPassword extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 30),
-                    DotsWidget(currentPage: 4, selectedNumber: null),
+                    DotsWidget(currentPage: 4, selectedNumber: 1),
                     SizedBox(height: 15),
                     CustomWelcomeTextWidget(
                       text: "Set up your password",
@@ -103,9 +123,9 @@ class SetupPassword extends StatelessWidget {
                         return AuthAppFunctions().isEmptyNull(value);
                       },
                       tappedEnableBorder: true,
-                      selectedNumber: null,
+                      selectedNumber: 1,
                       onChanged: (value) {
-                        BlocProvider.of<PatientRegisterStateCubit>(
+                        BlocProvider.of<DoctorRegisterCubit>(
                           context,
                         ).updatePasswordValues(
                           setPassword.text,
@@ -125,9 +145,9 @@ class SetupPassword extends StatelessWidget {
                         return AuthAppFunctions().isEmptyNull(value);
                       },
                       tappedEnableBorder: true,
-                      selectedNumber: null,
+                      selectedNumber: 1,
                       onChanged: (value) {
-                        BlocProvider.of<PatientRegisterStateCubit>(
+                        BlocProvider.of<DoctorRegisterCubit>(
                           context,
                         ).updatePasswordValues(
                           setPassword.text,
@@ -144,9 +164,11 @@ class SetupPassword extends StatelessWidget {
                       backgroundColor: MyColors.greyRegisterColorContainer,
                     ),
                     SizedBox(height: 20),
+
                     CustomPasswordCheckText(
                       isValid: state.isMiniEightOrSpecialChar,
-                      text:"a 8 or more characters Contains a special character (@#\$%&.^*/_-)",
+                      text:
+                          "a 8 or more characters Contains a special character (@#\$%&.^*/_-)",
                     ),
                     SizedBox(height: 10),
                     CustomPasswordCheckText(
@@ -165,22 +187,30 @@ class SetupPassword extends StatelessWidget {
                       isValid: state.isMatched,
                       text: "Password Matched",
                     ),
-
                     SizedBox(height: 50),
-                    CustomElevatedButton(
-                      isSignUpLoginDesign: true,
-                      text: "Sign up",
-                      onPressed: () {
-                        if(formKey.currentState!.validate()){
-                          if(state.isMatched && state.isMiniEightOrSpecialChar && state.oneNumber && state.lowerUpperChars){
-                            context.go(
-                              AppRoutes.hekkoo,
-                              extra: state.firstName,);
-                          }
-                        }
-                      },
-                      selectedNumber: null,
-                    ),
+                    state.status == RegisterStatus.loading
+                        ? const Center(child: CircularProgressIndicator())
+                        : CustomElevatedButton(
+                            isSignUpLoginDesign: true,
+                            text: "Sign up",
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                if (state.isMatched &&
+                                    state.isMiniEightOrSpecialChar &&
+                                    state.oneNumber &&
+                                    state.lowerUpperChars) {
+                                  context
+                                      .read<DoctorRegisterCubit>()
+                                      .submitRegisterDoctor();
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(content: Text("Please fulfill all password requirements")),
+                                  );
+                                }
+                              }
+                            },
+                            selectedNumber: 1,
+                          ),
                   ],
                 ),
               ),
