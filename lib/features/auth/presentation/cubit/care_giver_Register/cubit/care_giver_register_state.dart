@@ -1,119 +1,112 @@
-enum RegisterStatus { initial, loading, success, failure }
-class PatientRegisterState {
-  final int? userRole;
+part of 'care_giver_register_cubit.dart';
 
+enum RegisterStatus { initial, loading, success, failure }
+
+class CareGiverRegisterState {
+  final int? userRole;
   final String? firstName;
   final String? lastName;
   final String? userName;
-  final String? phoneNumber;
   final String? email;
 
-  final String? birthOfDate;
-  final String? height;
-  final String? weight;
-  final String? illnessStage;
-  final String? journeyStage;
-  final String? currentConcern;
+  final String? whoSupporting;
+  final String? patientName;
+  final String? supportType;
 
+  final String? age;
   final String? dailyRole;
-  final String? hobby;
-  final String? interests;
+  final String? journeyDescription;
+  final String? careGiverDuration;
+
   final String? password;
   final String? confirmedPassword;
-
-  final bool isLoading;
-  final String? errorMessage;
-
-  final double passwordStrength;
+  final double? passwordStrength;
   final bool isMiniEightOrSpecialChar;
   final bool lowerUpperChars;
   final bool oneNumber;
   final bool isMatched;
-  final RegisterStatus status;
 
-  PatientRegisterState({
+  final RegisterStatus status;
+  final bool isLoading;
+  final String? errorMessage;
+
+  CareGiverRegisterState({
     this.userRole,
     this.firstName,
     this.lastName,
     this.userName,
-    this.phoneNumber,
     this.email,
-    this.birthOfDate,
-    this.height,
-    this.weight,
-    this.illnessStage,
-    this.journeyStage,
-    this.currentConcern,
+    this.whoSupporting,
+    this.patientName,
+    this.supportType,
+    this.age,
     this.dailyRole,
-    this.hobby,
-    this.interests,
+    this.journeyDescription,
+    this.careGiverDuration,
     this.password,
     this.confirmedPassword,
-    this.isLoading = false,
-    this.errorMessage,
     this.passwordStrength = 0,
     this.isMiniEightOrSpecialChar = false,
     this.lowerUpperChars = false,
     this.oneNumber = false,
     this.isMatched = false,
     this.status = RegisterStatus.initial,
+    this.isLoading = false,
+    this.errorMessage,
   });
 
-  PatientRegisterState copyWith({
+  CareGiverRegisterState copywith({
     int? userRole,
     String? firstName,
     String? lastName,
-    String? username,
-    String? phoneNumber,
+    String? userName,
     String? email,
-    String? birthDate,
-    String? height,
-    String? weight,
-    String? illnessStage,
-    String? journeyStage,
-    String? currentConcern,
+
+    String? whoSupporting,
+    String? patientName,
+    String? supportType,
+
+    String? age,
     String? dailyRole,
-    String? hobby,
-    String? interest,
+    String? journeyDescription,
+    String? careGiverDuration,
+
     String? password,
     String? confirmedPassword,
-    bool? isLoading,
-    String? errorMessage,
     double? passwordStrength,
     bool? isMiniEightOrSpecialChar,
     bool? lowerUpperChars,
     bool? oneNumber,
     bool? isMatched,
+
     RegisterStatus? status,
+    bool? isLoading,
+    String? errorMessage,
   }) {
-    return PatientRegisterState(
+    return CareGiverRegisterState(
       userRole: userRole ?? this.userRole,
       firstName: firstName ?? this.firstName,
       lastName: lastName ?? this.lastName,
-      userName: username ?? userName,
-      phoneNumber: phoneNumber ?? this.phoneNumber,
+      userName: userName ?? this.userName,
       email: email ?? this.email,
-      birthOfDate: birthDate ?? birthOfDate,
-      height: height ?? this.height,
-      weight: weight ?? this.weight,
-      illnessStage: illnessStage ?? this.illnessStage,
-      journeyStage: journeyStage ?? this.journeyStage,
-      currentConcern: currentConcern ?? this.currentConcern,
+      whoSupporting: whoSupporting ?? this.whoSupporting,
+      patientName: patientName ?? this.patientName,
+      supportType: supportType ?? this.supportType,
+      age: age ?? this.age,
       dailyRole: dailyRole ?? this.dailyRole,
-      hobby: hobby ?? this.hobby,
-      interests: interest ?? interests,
+      journeyDescription: journeyDescription ?? this.journeyDescription,
+      careGiverDuration: careGiverDuration ?? this.careGiverDuration,
       password: password ?? this.password,
       confirmedPassword: confirmedPassword ?? this.confirmedPassword,
-      isLoading: isLoading ?? this.isLoading,
-      errorMessage: errorMessage ?? this.errorMessage,
       passwordStrength: passwordStrength ?? this.passwordStrength,
-      isMiniEightOrSpecialChar: isMiniEightOrSpecialChar ?? this.isMiniEightOrSpecialChar,
+      isMiniEightOrSpecialChar:
+          isMiniEightOrSpecialChar ?? this.isMiniEightOrSpecialChar,
       lowerUpperChars: lowerUpperChars ?? this.lowerUpperChars,
       oneNumber: oneNumber ?? this.oneNumber,
       isMatched: isMatched ?? this.isMatched,
+      isLoading: isLoading ?? this.isLoading,
+      errorMessage: errorMessage ?? this.errorMessage,
       status: status ?? this.status,
-      
-      
     );
   }
 }

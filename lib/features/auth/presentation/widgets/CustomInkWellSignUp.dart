@@ -20,12 +20,13 @@ class CustomInkWellSignUp extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w400,
           fontSize: 15,
-          color: selectedNumber==1? MyColors.blueColor:MyColors.mainColor,
+          color: selectedNumber == 1
+              ? MyColors.blueColor
+              : selectedNumber == 2
+              ? MyColors.greenColor
+              : MyColors.mainColor,
         ),
       ),
     );
   }
-
-
-  
 }

@@ -54,7 +54,7 @@ class PatientRegisterStateCubit extends Cubit<PatientRegisterState> {
     );
   }
 
-  void updateLifestyleInfo({String? role, String? hobby, String? interest}) {
+  void updateLifestyleInfo({String? role, String? hobby, String? interest,String ? careOne, String? careTwo}) {
     emit(state.copyWith(dailyRole: role, hobby: hobby, interest: interest));
   }
 

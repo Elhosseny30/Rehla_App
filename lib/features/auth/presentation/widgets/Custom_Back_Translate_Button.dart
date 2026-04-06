@@ -34,7 +34,11 @@ class CustomBackTranslateButton extends StatelessWidget {
           icon,
           fontWeight: FontWeight.w400,
           size: iconSize,
-          color:selectedNumber==1?MyColors.blueColor: MyColors.mainColor,
+          color: selectedNumber == 1
+              ? MyColors.blueColor
+              : selectedNumber == 2
+              ? MyColors.greenColor
+              : MyColors.mainColor,
         ),
       ),
     );

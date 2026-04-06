@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/fonts.dart';
 
@@ -23,13 +22,17 @@ class CustomElevatedButton extends StatelessWidget {
         backgroundColor: isSignUpLoginDesign
             ? selectedNumber == 1
                   ? MyColors.blueColor
+                  : selectedNumber == 2
+                  ? MyColors.greenColor
                   : MyColors.mainColor
             : MyColors.whiteColor,
         minimumSize: Size(double.infinity, 55),
         shape: RoundedRectangleBorder(
           side: BorderSide(
-            color: selectedNumber == 1
+            color: selectedNumber == 1 
                 ? MyColors.blueColor
+                : selectedNumber == 2
+                ? MyColors.greenColor
                 : MyColors.mainColor,
 
             width: 1.5,
@@ -45,6 +48,8 @@ class CustomElevatedButton extends StatelessWidget {
               ? MyColors.whiteColor
               : selectedNumber == 1
               ? MyColors.blueColor
+              : selectedNumber == 2
+              ? MyColors.greenColor
               : MyColors.mainColor,
           fontSize: 25,
           fontFamily: fontsApp.mainFont,

@@ -12,7 +12,7 @@ class CustomContainerWidget extends StatelessWidget {
     required this.textTwo,
     required this.isSelected,
     required this.selectedNumber,
-    required this.eachIcon
+    required this.eachIcon,
   });
   final String title;
   final String textOne;
@@ -24,6 +24,8 @@ class CustomContainerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color currentColor = (selectedNumber == 1 && isSelected)
         ? MyColors.blueColor
+        : (selectedNumber == 2 && isSelected)
+        ? MyColors.greenColor
         : isSelected
         ? MyColors.mainColor
         : MyColors.greyRegisterColorContainer;
@@ -42,14 +44,20 @@ class CustomContainerWidget extends StatelessWidget {
 
           children: [
             if (eachIcon == 0) ...[
-              SvgPicture.asset(Assets.healthRibbonIcon,
-              color: selectedNumber == 0? MyColors.mainColor:null,),
+              SvgPicture.asset(
+                Assets.healthRibbonIcon,
+                color: selectedNumber == 0 ? MyColors.mainColor : null,
+              ),
             ] else if (eachIcon == 1) ...[
-              SvgPicture.asset(Assets.imagesPlusIcon,
-              color: selectedNumber == 1? MyColors.blueColor:null,),
-            ] else if(eachIcon == 2)...[
-              SvgPicture.asset(Assets.imagesHeartIcon,
-              color: selectedNumber == 2? MyColors.mainColor:null,),
+              SvgPicture.asset(
+                Assets.imagesPlusIcon,
+                color: selectedNumber == 1 ? MyColors.blueColor : null,
+              ),
+            ] else if (eachIcon == 2) ...[
+              SvgPicture.asset(
+                Assets.imagesHeartIcon,
+                color: selectedNumber == 2 ? MyColors.greenColor : null,
+              ),
             ],
 
             const SizedBox(height: 5),

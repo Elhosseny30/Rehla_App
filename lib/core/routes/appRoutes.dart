@@ -6,12 +6,16 @@ abstract class AppRoutes {
   static const forgetPassword = '/forgetPassword';
   static const signUp = '/signUp';
   static const patientCareGiverScreen = '/patientCareGiverScreen';
+  static const CareGiverScreen = '/CareGiverScreen';
   static const doctorScreen = '/doctorScreen';
   static const infoDoctorScreen = '/infoDoctorScreen';
   static const infoPatientCareGiverScreen = '/infoPatientCareGiverScreen';
   static const infoPatientCareGiverTwo = "/infoPatientCareGiverTwo";
+  static const infoCareGiverTwo = "/infoCarGiverTwo";
+  static const infoCareGiverThree = "/infoCarGiverThree";
   static const infoDoctorNationalID = "/infoDoctorNationalID";
   static const setupPatientPassword = "/setupPatientPassword";
   static const setupDoctorPassword = "/setupDoctorPassword";
+  static const setupCareGiverPassword = "/setupCareGiverPassword";
   static const hekkoo = "/hekko";
 }

@@ -214,6 +214,8 @@ import 'package:graduationproject/features/auth/presentation/widgets/DotsWidgets
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
 
 class SignUp extends StatelessWidget {
+  const SignUp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PatientRegisterStateCubit, PatientRegisterState>(
@@ -253,6 +255,8 @@ class SignUp extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             color: selectedIndex == 1
                                 ? MyColors.blueColor
+                                : selectedIndex == 2
+                                ? MyColors.greenColor
                                 : MyColors.mainColor,
                             text: "New Account",
                             size: 20,
@@ -359,9 +363,12 @@ class SignUp extends StatelessWidget {
                       selectedNumber: selectedIndex,
                       text: "Continue",
                       onPressed: () {
-                        if (selectedIndex == 0 || selectedIndex == 2) {
+                        if (selectedIndex == 0) {
                           (context).push(AppRoutes.patientCareGiverScreen);
-                        } else {
+                        } else if(selectedIndex == 2){
+                          (context).push(AppRoutes.CareGiverScreen);
+                        }
+                        else {
                           (context).push(AppRoutes.doctorScreen);
                         }
                       },

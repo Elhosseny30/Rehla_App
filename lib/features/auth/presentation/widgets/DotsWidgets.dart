@@ -7,7 +7,6 @@ class DotsWidget extends StatelessWidget {
   final int currentPage;
   @override
   Widget build(BuildContext context) {
-    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,13 +18,19 @@ class DotsWidget extends StatelessWidget {
             width: (index == currentPage) ? 24 : 8,
             height: 8,
             decoration: BoxDecoration(
-              border: Border.all(color: selectedNumber == 1
-                        ? MyColors.blueColor
-                        : MyColors.mainColor),
+              border: Border.all(
+                color: selectedNumber == 1
+                    ? MyColors.blueColor
+                    : selectedNumber == 2
+                    ? MyColors.greenColor
+                    : MyColors.mainColor,
+              ),
               color: (index <= currentPage
                   ? selectedNumber == 1
-                        ? MyColors.blueColor
-                        : MyColors.mainColor
+                  ? MyColors.blueColor
+                  : selectedNumber == 2
+                  ? MyColors.greenColor
+                  : MyColors.mainColor
                   : Colors.transparent),
               borderRadius: BorderRadius.circular(8),
             ),
@@ -34,5 +39,4 @@ class DotsWidget extends StatelessWidget {
       ],
     );
   }
-
 }

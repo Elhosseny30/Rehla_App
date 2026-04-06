@@ -84,6 +84,7 @@ class ForgetPassword extends StatelessWidget {
                     if (!emailValid) {
                       return "ًWrong Email";
                     }
+                    return null;
                   },
                 ),
                 SizedBox(height: 75),

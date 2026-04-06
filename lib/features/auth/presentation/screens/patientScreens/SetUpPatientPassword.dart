@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graduationproject/core/Routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';

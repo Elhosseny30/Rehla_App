@@ -26,6 +26,7 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
     }
   }
 
+  @override
   Future<void> close() {
     pageController.dispose();
     return super.close();

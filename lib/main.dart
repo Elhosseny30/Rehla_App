@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduationproject/core/Routes/GoRouter.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
 
@@ -13,6 +14,7 @@ void main() async{
       providers: [
         BlocProvider(create: (context) => PatientRegisterStateCubit()),
         BlocProvider(create: (context) => DoctorRegisterCubit()),
+        BlocProvider(create: (context) => CareGiverRegisterCubit()),
       ],
       child: RehlaApp(),
     ),

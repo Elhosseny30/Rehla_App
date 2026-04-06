@@ -7,7 +7,7 @@ import 'package:graduationproject/features/onboarding/presentation/widgets/Custo
 import 'package:graduationproject/features/onboarding/presentation/widgets/CustomContinueButton.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  OnBoardingScreen({super.key});
+  const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

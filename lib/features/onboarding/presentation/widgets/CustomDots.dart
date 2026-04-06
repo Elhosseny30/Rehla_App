@@ -6,7 +6,7 @@ import 'package:graduationproject/features/onboarding/presentation/cubit/on_boar
 import 'package:graduationproject/features/onboarding/presentation/cubit/on_boarding_cubit_state.dart';
 
 class CustomDots extends StatelessWidget {
-  CustomDots({super.key});
+  const CustomDots({super.key});
 
   @override
   Widget build(BuildContext context) {

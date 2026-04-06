@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
+import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomBuildSocailIcon.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomElevatedButton.dart';
@@ -15,12 +16,12 @@ import 'package:graduationproject/features/auth/presentation/widgets/DotsWidgets
 import 'package:graduationproject/features/auth/presentation/widgets/OrCointinueWithWidget.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
 
-class PatientCareGiverScreen extends StatelessWidget {
-  PatientCareGiverScreen({super.key});
+class CareGiverScreen extends StatelessWidget {
+  CareGiverScreen({super.key});
   final TextEditingController firstNameText = TextEditingController();
   final TextEditingController lastNameText = TextEditingController();
   final TextEditingController userName = TextEditingController();
-  final TextEditingController phoneNumber = TextEditingController();
+  //final TextEditingController phoneNumber = TextEditingController();
   final TextEditingController emailText = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
@@ -42,7 +43,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () {},
                           child: CustomBackTranslateButton(
-                            selectedNumber: null,
+                            selectedNumber: 2,
                             iconSize: 25,
                             width: 80,
                             height: 50,
@@ -59,7 +60,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                         alignment: Alignment.center,
                         child: CustomWelcomeTextWidget(
                           fontWeight: FontWeight.w500,
-                          color: MyColors.mainColor,
+                          color: MyColors.greenColor,
 
                           text: "New Account",
                           size: 20,
@@ -70,7 +71,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: CustomBackTranslateButton(
-                          selectedNumber: null,
+                          selectedNumber: 2,
                           iconSize: 25,
                           width: 80,
                           height: 50,
@@ -83,7 +84,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 30),
-                DotsWidget(currentPage: 1, selectedNumber: null),
+                DotsWidget(currentPage: 1, selectedNumber: 2),
 
                 SizedBox(height: 50),
                 Row(
@@ -99,7 +100,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 10),
                           CustomTextField(
-                            selectedNumber: null,
+                            selectedNumber: 2,
                             validator: (value) {
                               return AuthAppFunctions().isEmptyNull(value);
                             },
@@ -121,7 +122,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 10),
                           CustomTextField(
-                            selectedNumber: null,
+                            selectedNumber: 2,
                             tappedEnableBorder: true,
                             hintText: '',
                             isPassword: false,
@@ -152,7 +153,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 CustomTextField(
-                  selectedNumber: null,
+                  selectedNumber: 2,
                   tappedEnableBorder: true,
                   hintText: '@username',
                   isPassword: false,
@@ -164,37 +165,11 @@ class PatientCareGiverScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Row(
-                    children: [
-                      CustomTitleTextFormField(title: "phone number "),
-                      CustomWelcomeTextWidget(
-                        text: '(optional)',
-                        size: 20,
-                        fontWeight: FontWeight.w400,
-                        color: MyColors.blackColor,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10),
-                CustomTextField(
-                  selectedNumber: null,
-                  tappedEnableBorder: true,
-                  hintText: '+20',
-                  isPassword: false,
-                  controller: phoneNumber,
-                  validator: (value) {
-                    return null;
-                  },
-                ),
-                SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.centerLeft,
                   child: CustomTitleTextFormField(title: "Email"),
                 ),
                 SizedBox(height: 10),
                 CustomTextField(
-                  selectedNumber: null,
+                  selectedNumber: 2,
                   validator: (value) {
                     return AuthAppFunctions().emailChecker(value);
                   },
@@ -218,7 +193,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                       text: "Terms of Use",
                       size: 14,
                       fontWeight: FontWeight.w400,
-                      color: MyColors.mainColor,
+                      color: MyColors.greenColor,
                     ),
                     CustomWelcomeTextWidget(
                       text: " and ",
@@ -230,7 +205,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                       text: "Privacy Policy.",
                       size: 14,
                       fontWeight: FontWeight.w400,
-                      color: MyColors.mainColor,
+                      color: MyColors.greenColor,
                     ),
                   ],
                 ),
@@ -240,20 +215,18 @@ class PatientCareGiverScreen extends StatelessWidget {
                   text: "Continue",
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      BlocProvider.of<PatientRegisterStateCubit>(
-                        context,
-                      ).updateBasicInfo(
+                      BlocProvider.of<CareGiverRegisterCubit>(context).updateBasicsInfo(
                         email: emailText.text,
                         fName: firstNameText.text,
                         lName: lastNameText.text,
-                        uName: userName.text,
-                        phone: phoneNumber.text,
-                        role: 0,
-                      );
-                      (context).push(AppRoutes.infoPatientCareGiverScreen);
-                    }
+                        userName: userName.text,
+                        role:2,
+                        
+                        );
+                      (context).push(AppRoutes.infoCareGiverTwo);
+                    } 
                   },
-                  selectedNumber: null,
+                  selectedNumber: 2,
                 ),
                 SizedBox(height: 20),
                 OrContinueWithWidget(text: "Or fill data with"),
@@ -298,7 +271,7 @@ class PatientCareGiverScreen extends StatelessWidget {
                       color: MyColors.blackColor,
                     ),
                     CustomInkWellSignUp(
-                      selectedNumber: null,
+                      selectedNumber: 2,
                       text: "Log in",
                       onTap: () {
                         context.pushReplacement(AppRoutes.login);

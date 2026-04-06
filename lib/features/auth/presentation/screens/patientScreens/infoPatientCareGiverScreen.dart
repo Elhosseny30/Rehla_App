@@ -281,16 +281,14 @@ class InfoPatientCareGiverScreen extends StatelessWidget {
                       text: "Continue",
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          
-                                  BlocProvider.of<PatientRegisterStateCubit>(
-                                    context,
-                                  ).updateMedicalInfo(
-                                    dob: dateOfBirth.text,
-                                    height: height.text,
-                                    weight: weight.text,
-                                    );
-                              
-                               
+                          BlocProvider.of<PatientRegisterStateCubit>(
+                            context,
+                          ).updateMedicalInfo(
+                            dob: dateOfBirth.text,
+                            height: height.text,
+                            weight: weight.text,
+                          );
+
                           (context).push(AppRoutes.infoPatientCareGiverTwo);
                         }
                       },

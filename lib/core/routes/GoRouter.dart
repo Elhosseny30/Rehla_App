@@ -1,5 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/routes/appRoutes.dart';
+import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/CareGiverScreen.dart';
+import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/SetUpCareGiverPassword.dart';
+import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/infoCareGiverThree.dart';
+import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/infoCareGiverTwoo.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/SetUpDoctorPassword.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/doctor.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/infoDoctor.dart';
@@ -38,6 +42,18 @@ final GoRouter router = GoRouter(
       builder: (context, state) => PatientCareGiverScreen(),
     ),
     GoRoute(
+      path: AppRoutes.CareGiverScreen,
+      builder: (context, state) => CareGiverScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.infoCareGiverTwo,
+      builder: (context, state) => InfoCareGiverTwo(),
+    ),
+    GoRoute(
+      path: AppRoutes.infoCareGiverThree,
+      builder: (context, state) => InfoCareGiverThree(),
+    ),
+    GoRoute(
       path: AppRoutes.doctorScreen,
       builder: (context, state) => DoctorScreen(),
     ),
@@ -66,11 +82,16 @@ final GoRouter router = GoRouter(
       builder: (context, state) => SetUpDoctorPassword(),
     ),
     GoRoute(
+      path: AppRoutes.setupCareGiverPassword,
+      builder: (context, state) => SetUpCareGiverPassword(),
+    ),
+    GoRoute(
       path: AppRoutes.hekkoo,
       builder: (context, state) {
         final username = state.extra as String? ?? "Patient";
         return hekko(name: username);
       },
     ),
+
   ],
 );

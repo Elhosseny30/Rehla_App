@@ -69,6 +69,7 @@ class LoginScreen extends StatelessWidget {
                         if (!emailValid) {
                           return "ًWrong Email";
                         }
+                        return null;
                       },
                     ),
                     SizedBox(height: 20),
@@ -76,7 +77,9 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     CustomTextField(
                       selectedNumber: null,
-                      validator: (value){},
+                      validator: (value){
+                        return null;
+                      },
                       tappedEnableBorder: false,
                       hintText: "*****************",
                       isPassword: true,

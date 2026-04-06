@@ -35,7 +35,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.nationalID == true ?TextInputType.number: TextInputType.text ,
-      inputFormatters: widget.nationalID!
+      inputFormatters: widget.nationalID
           ? [
               FilteringTextInputFormatter.digitsOnly, 
               LengthLimitingTextInputFormatter(14),     
@@ -75,7 +75,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           borderSide: BorderSide(
             width: 1,
             color: widget.selectedNumber == 1
-                ? MyColors.blueColor
+                ? MyColors.blueColor : widget.selectedNumber == 2 ? MyColors.greenColor
                 : MyColors.mainColor,
           ),
         ),
