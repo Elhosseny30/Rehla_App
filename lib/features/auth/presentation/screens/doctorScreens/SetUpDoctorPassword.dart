@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
@@ -23,13 +24,14 @@ class SetUpDoctorPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<DoctorRegisterCubit, DoctorRegisterState>(
       listener: (context, state) {
-        if (state.status == RegisterStatus.success) {
+        if (state.status == RegisterStatus.registerSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text("Account created! Redirecting to verify email..."),
               backgroundColor: Colors.green,
             ),
           );
+          context.push(AppRoutes.verificationEmailDoctor);
 
           // context.go(AppRoutes.loginScreen);
         }

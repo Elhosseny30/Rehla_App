@@ -1,3 +1,4 @@
+
 abstract class AppRoutes {
   static const splash = '/';
   static const homeScreen = '/homeScreen';
@@ -17,5 +18,9 @@ abstract class AppRoutes {
   static const setupPatientPassword = "/setupPatientPassword";
   static const setupDoctorPassword = "/setupDoctorPassword";
   static const setupCareGiverPassword = "/setupCareGiverPassword";
+  static const verificationEmailCareGiver = "/verificationEmailCareGiver";
+  static  const verificationEmailPatient = "/verificationEmailPatient";
+  static const verificationEmailDoctor = "/verificationEmailDoctor";
+  
   static const hekkoo = "/hekko";
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:graduationproject/core/Routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_state.dart' hide RegisterStatus;
+
 import 'package:graduationproject/features/auth/presentation/widgets/CustomElevatedButton.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomPasswordChecksText.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomTextField.dart';
@@ -24,18 +24,18 @@ class SetUpCareGiverPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<CareGiverRegisterCubit, CareGiverRegisterState>(
       listener: (context, state) {
-        if (state.status == RegisterStatus.success) {
+        if (state.status == RegisterStatus.registerSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text("Account created! Redirecting to verify email..."),
               backgroundColor: Colors.green,
             ),
           );
-
-          // context.go(AppRoutes.loginScreen);
+          (context).push(AppRoutes.verificationEmailCareGiver);
         }
 
-        if (state.status == RegisterStatus.failure && state.errorMessage != null) {
+        if (state.status == RegisterStatus.failure &&
+            state.errorMessage != null) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(state.errorMessage!),
@@ -103,7 +103,7 @@ class SetUpCareGiverPassword extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 30),
-                    DotsWidget(currentPage: 4, selectedNumber:2),
+                    DotsWidget(currentPage: 4, selectedNumber: 2),
                     SizedBox(height: 15),
                     CustomWelcomeTextWidget(
                       text: "Set up your password",
@@ -145,7 +145,7 @@ class SetUpCareGiverPassword extends StatelessWidget {
                         return AuthAppFunctions().isEmptyNull(value);
                       },
                       tappedEnableBorder: true,
-                      selectedNumber:2,
+                      selectedNumber: 2,
                       onChanged: (value) {
                         BlocProvider.of<CareGiverRegisterCubit>(
                           context,
@@ -204,7 +204,11 @@ class SetUpCareGiverPassword extends StatelessWidget {
                                       .submitRegisterCareGiver();
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(content: Text("Please fulfill all password requirements")),
+                                    const SnackBar(
+                                      content: Text(
+                                        "Please fulfill all password requirements",
+                                      ),
+                                    ),
                                   );
                                 }
                               }
@@ -221,5 +225,3 @@ class SetUpCareGiverPassword extends StatelessWidget {
     );
   }
 }
-
-

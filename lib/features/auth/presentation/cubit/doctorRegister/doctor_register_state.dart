@@ -1,4 +1,5 @@
-enum RegisterStatus { initial, loading, success, failure }
+enum RegisterStatus { initial, loading, registerSuccess,resendSuccess,
+  verifySuccess, failure }
 
 class DoctorRegisterState {
   final int? userRole;

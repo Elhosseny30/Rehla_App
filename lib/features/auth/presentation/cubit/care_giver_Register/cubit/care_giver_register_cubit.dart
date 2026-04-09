@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/core/utils/error.dart';
 import 'package:graduationproject/features/auth/data/models/register_response_model.dart';
-
+import 'package:flutter/material.dart';
 part 'care_giver_register_state.dart';
 
 class CareGiverRegisterCubit extends Cubit<CareGiverRegisterState> {
@@ -115,15 +116,13 @@ class CareGiverRegisterCubit extends Cubit<CareGiverRegisterState> {
         "confirmPassword": state.confirmedPassword,
         "age": state.age,
         "supportingWhom": state.whoSupporting,
-        "patientNickname": state.patientName,
+        "patientEmail": state.patientEmail,
         "supportType": state.supportType,
         "dailyRole": state.dailyRole,
         "journeyDescription": state.journeyDescription,
         "caregiverDuration": state.careGiverDuration,
-        "phoneNumber" : "01007123597",
-        "patientEmail": "mahitab@gmail.com",
+        "phoneNumber": "01007123597",
         "address": "elmoderia",
-
       };
       print("Sending data: $requestData");
 
@@ -133,8 +132,8 @@ class CareGiverRegisterCubit extends Cubit<CareGiverRegisterState> {
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        final successModel = RegisterResponseModel.fromJson(response.data);
-        emit(state.copywith(status: RegisterStatus.success));
+       
+        emit(state.copywith(status: RegisterStatus.registerSuccess));
       }
     } on DioException catch (e) {
       String errorMsg = 'Somthing went wrong';
@@ -152,6 +151,103 @@ class CareGiverRegisterCubit extends Cubit<CareGiverRegisterState> {
       emit(
         state.copywith(status: RegisterStatus.failure, errorMessage: errorMsg),
       );
+    } catch (e) {
+      emit(
+        state.copywith(
+          status: RegisterStatus.failure,
+          errorMessage: e.toString(),
+        ),
+      );
+    }
+  }
+
+  Future<void> verifayEmail({
+    required String email,
+    required String code,
+  }) async {
+    emit(state.copywith(status: RegisterStatus.loading));
+
+    try {
+      final response = await DioHelper.postData(
+        url: 'api/Account/ConfirmEmail',
+        data: {"email": email, "code": code},
+      );
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        emit(state.copywith(status: RegisterStatus.verifySuccess));
+      }
+    } on DioException catch (e) {
+      String errorMsg = 'Somthing went wrong';
+      if (e.response != null && e.response?.data != null) {
+        try {
+          final errorModel = ErrorResponseModel.fromJson(e.response!.data);
+          errorMsg = errorModel.errorMessage;
+        } catch (_) {
+          errorMsg = e.response?.data.toString() ?? 'Server Error';
+        }
+        print("Error: $errorMsg");
+        emit(
+          state.copywith(
+            status: RegisterStatus.failure,
+            errorMessage: errorMsg,
+          ),
+        );
+      }else {
+        errorMsg = "Check your internet connection";
+        emit(
+          state.copywith(
+            status: RegisterStatus.failure,
+            errorMessage: errorMsg,
+          ),
+        );
+      }
+    } catch (e) {
+      emit(
+        state.copywith(
+          status: RegisterStatus.failure,
+          errorMessage: e.toString(),
+        ),
+      );
+    }
+  }
+
+  Future<void> resendVerificationEmail({
+    required String email,
+  }) async {
+    emit(state.copywith(status: RegisterStatus.loading));
+
+    try {
+      final response = await DioHelper.postData(
+        url: 'api/Account/ResendConfirmation',
+        queryParameters: {"Email":email},
+      );
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        emit(state.copywith(status: RegisterStatus.resendSuccess));
+      }
+    } on DioException catch (e) {
+      String errorMsg = 'Somthing went wrong';
+      if (e.response != null && e.response?.data != null) {
+        try {
+          final errorModel = ErrorResponseModel.fromJson(e.response!.data);
+          errorMsg = errorModel.errorMessage;
+        } catch (_) {
+          errorMsg = e.response?.data.toString() ?? 'Server Error';
+        }
+        print("Error: $errorMsg");
+        emit(
+          state.copywith(
+            status: RegisterStatus.failure,
+            errorMessage: errorMsg,
+          ),
+        );
+      }else {
+        errorMsg = "Check your internet connection";
+        emit(
+          state.copywith(
+            status: RegisterStatus.failure,
+            errorMessage: errorMsg,
+          ),
+        );
+      }
     } catch (e) {
       emit(
         state.copywith(

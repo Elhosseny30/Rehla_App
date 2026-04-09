@@ -1,6 +1,13 @@
 part of 'care_giver_register_cubit.dart';
 
-enum RegisterStatus { initial, loading, success, failure }
+enum RegisterStatus {
+  initial,
+  loading,
+  registerSuccess,
+  verifySuccess,
+  resendSuccess,
+  failure,
+}
 
 class CareGiverRegisterState {
   final int? userRole;
@@ -10,7 +17,7 @@ class CareGiverRegisterState {
   final String? email;
 
   final String? whoSupporting;
-  final String? patientName;
+  final String? patientEmail;
   final String? supportType;
 
   final String? age;
@@ -37,7 +44,7 @@ class CareGiverRegisterState {
     this.userName,
     this.email,
     this.whoSupporting,
-    this.patientName,
+    this.patientEmail,
     this.supportType,
     this.age,
     this.dailyRole,
@@ -90,7 +97,7 @@ class CareGiverRegisterState {
       userName: userName ?? this.userName,
       email: email ?? this.email,
       whoSupporting: whoSupporting ?? this.whoSupporting,
-      patientName: patientName ?? this.patientName,
+      patientEmail: patientName ?? this.patientEmail,
       supportType: supportType ?? this.supportType,
       age: age ?? this.age,
       dailyRole: dailyRole ?? this.dailyRole,

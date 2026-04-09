@@ -1,4 +1,12 @@
-enum RegisterStatus { initial, loading, success, failure }
+enum RegisterStatus {
+  initial,
+  loading,
+  registerSuccess,
+  verifySuccess,
+  resendSuccess,
+  failure,
+}
+
 class PatientRegisterState {
   final int? userRole;
 
@@ -107,13 +115,12 @@ class PatientRegisterState {
       isLoading: isLoading ?? this.isLoading,
       errorMessage: errorMessage ?? this.errorMessage,
       passwordStrength: passwordStrength ?? this.passwordStrength,
-      isMiniEightOrSpecialChar: isMiniEightOrSpecialChar ?? this.isMiniEightOrSpecialChar,
+      isMiniEightOrSpecialChar:
+          isMiniEightOrSpecialChar ?? this.isMiniEightOrSpecialChar,
       lowerUpperChars: lowerUpperChars ?? this.lowerUpperChars,
       oneNumber: oneNumber ?? this.oneNumber,
       isMatched: isMatched ?? this.isMatched,
       status: status ?? this.status,
-      
-      
     );
   }
 }

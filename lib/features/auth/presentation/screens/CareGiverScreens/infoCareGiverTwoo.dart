@@ -19,7 +19,7 @@ import 'package:graduationproject/features/auth/presentation/widgets/WelcomeText
 class InfoCareGiverTwo extends StatelessWidget {
   InfoCareGiverTwo({super.key});
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController nickName = TextEditingController();
+  final TextEditingController email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CareGiverRegisterCubit, CareGiverRegisterState>(
@@ -146,18 +146,18 @@ class InfoCareGiverTwo extends StatelessWidget {
                     ),
 
                     SizedBox(height: 20),
-                    CustomTitleTextFormField(title: "Their name or nickname"),
+                    CustomTitleTextFormField(title: "Email patient"),
                     SizedBox(height: 10),
 
                     CustomTextField(
                       selectedNumber: 2,
                       validator: (value) {
-                        return AuthAppFunctions().isEmptyNull(value);
+                        return AuthAppFunctions().emailChecker(value);
                       },
                       tappedEnableBorder: true,
-                      hintText: 'nickname',
+                      hintText: 'Example@example.com',
                       isPassword: false,
-                      controller: nickName,
+                      controller: email,
                     ),
                     SizedBox(height: 20),
                     CustomTitleTextFormField(
@@ -197,7 +197,7 @@ class InfoCareGiverTwo extends StatelessWidget {
                         if (formKey.currentState!.validate()) {
                           BlocProvider.of<CareGiverRegisterCubit>(
                             context,
-                          ).updateSupportInfo(theirNickName: nickName.text);
+                          ).updateSupportInfo(theirNickName: email.text);
                           (context).push(AppRoutes.infoCareGiverThree);
                         }
                       },

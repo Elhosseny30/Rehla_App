@@ -4,13 +4,16 @@ import 'package:graduationproject/features/auth/presentation/screens/CareGiverSc
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/SetUpCareGiverPassword.dart';
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/infoCareGiverThree.dart';
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/infoCareGiverTwoo.dart';
+import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/verification_Email.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/SetUpDoctorPassword.dart';
+import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/Verification_Email.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/doctor.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/infoDoctor.dart';
 import 'package:graduationproject/features/auth/presentation/screens/doctorScreens/infoDoctorIDNational.dart';
 import 'package:graduationproject/features/auth/presentation/screens/forgetPassword.dart';
 import 'package:graduationproject/features/auth/presentation/screens/login.dart';
 import 'package:graduationproject/features/auth/presentation/screens/patientScreens/SetUpPatientPassword.dart';
+import 'package:graduationproject/features/auth/presentation/screens/patientScreens/Verification_Email.dart';
 import 'package:graduationproject/features/auth/presentation/screens/patientScreens/hell.dart';
 import 'package:graduationproject/features/auth/presentation/screens/patientScreens/infoPatientCareGiverScreen.dart';
 import 'package:graduationproject/features/auth/presentation/screens/patientScreens/infoPatientCareGiverTwo.dart';
@@ -84,6 +87,24 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: AppRoutes.setupCareGiverPassword,
       builder: (context, state) => SetUpCareGiverPassword(),
+    ),
+    GoRoute(
+      path: AppRoutes.verificationEmailCareGiver,
+      builder: (context, state) => VerificationEmailCareGiver(),
+    ),
+    GoRoute(
+      path: AppRoutes.verificationEmailPatient,
+      builder: (context, state) => VerificationEmailPatient(),
+    ),
+
+    GoRoute(
+      path: AppRoutes.verificationEmailDoctor,
+      builder: (context, state) => VerificationEmailDoctor(),
+    ),
+
+    GoRoute(
+      path: AppRoutes.login,
+      builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: AppRoutes.hekkoo,

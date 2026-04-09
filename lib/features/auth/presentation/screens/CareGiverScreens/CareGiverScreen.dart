@@ -5,7 +5,6 @@ import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/utils/functions.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
-import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomBuildSocailIcon.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomElevatedButton.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/CustomInkWellSignUp.dart';
