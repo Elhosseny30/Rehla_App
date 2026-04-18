@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
@@ -29,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
                     radius: 30,
                     child: SvgPicture.asset(
                       
-                      "assets/images/person.svg",
+                      Assets.imagesPerson,
                       height: 45,
                       width: 45,
                     ),
@@ -55,12 +56,12 @@ class CustomAppBar extends StatelessWidget {
                   Spacer(),
                   SvgPicture.asset(
                   
-                    "assets/images/chat.svg",
+                    Assets.imagesChat,
                     height: 50,
                     width: 50,
                   ),
                   SvgPicture.asset(
-                    "assets/images/bell.svg",
+                    Assets.imagesBell,
                     height: 50,
                     width: 50,
                   ),
