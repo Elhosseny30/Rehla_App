@@ -21,6 +21,7 @@ abstract class AppRoutes {
   static const verificationEmailCareGiver = "/verificationEmailCareGiver";
   static  const verificationEmailPatient = "/verificationEmailPatient";
   static const verificationEmailDoctor = "/verificationEmailDoctor";
+  static const patientHomeScreen = "/patienthomeScreen";
   
   static const hekkoo = "/hekko";
 }
