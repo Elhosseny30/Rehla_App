@@ -13,7 +13,7 @@ class CustomOneEmoji extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: MyColors.whiteColor,
         radius: 27,
-        child: Image.asset(Assets.imagesHappy, width: 35, height: 35),
+        child: Image.asset(emojiPath, width: 35, height: 35),
       ),
     );
   }

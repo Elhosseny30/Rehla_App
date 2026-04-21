@@ -20,13 +20,19 @@ import 'package:graduationproject/features/auth/presentation/screens/patientScre
 import 'package:graduationproject/features/auth/presentation/screens/patientScreens/patientCareGiverScreen.dart';
 import 'package:graduationproject/features/auth/presentation/screens/signUp.dart';
 import 'package:graduationproject/features/onboarding/presentation/screens/onboardingscreen.dart';
-import 'package:graduationproject/features/patient/presentation/screens/Patient_Home_Page.dart';
-import 'package:graduationproject/features/splash/presentation/screens/splash.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Bottom_Navigation_Bar.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Patient_Home.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Patient_Medical_Summary.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Patient_Session.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Patinet_Community.dart';
 import 'package:graduationproject/homeScreen.dart';
 
 final GoRouter router = GoRouter(
   routes: [
-    GoRoute(path: AppRoutes.splash, builder: (context, state) => PatientHomePage()),
+    GoRoute(
+      path: AppRoutes.splash,
+      builder: (context, state) => MainNavigationBar(),
+    ),
     GoRoute(
       path: AppRoutes.homeScreen,
       builder: (context, state) => HomeScreen(),
@@ -103,14 +109,27 @@ final GoRouter router = GoRouter(
       builder: (context, state) => VerificationEmailDoctor(),
     ),
 
-    GoRoute(
-      path: AppRoutes.login,
-      builder: (context, state) => LoginScreen(),
-    ),
+    GoRoute(path: AppRoutes.login, builder: (context, state) => LoginScreen()),
 
+    GoRoute(
+      path: AppRoutes.mainNavigationBar,
+      builder: (context, state) => MainNavigationBar(),
+    ),
     GoRoute(
       path: AppRoutes.patientHomeScreen,
       builder: (context, state) => PatientHomePage(),
+    ),
+    GoRoute(
+      path: AppRoutes.patientMedicalSummary,
+      builder: (context, state) => PatientMedicalSummary(),
+    ),
+    GoRoute(
+      path: AppRoutes.patientCommunity,
+      builder: (context, state) => PatientCommunity(),
+    ),
+    GoRoute(
+      path: AppRoutes.patientSession,
+      builder: (context, state) => PatientSession(),
     ),
     GoRoute(
       path: AppRoutes.hekkoo,
@@ -119,6 +138,5 @@ final GoRouter router = GoRouter(
         return hekko(name: username);
       },
     ),
-
   ],
 );

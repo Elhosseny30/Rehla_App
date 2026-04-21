@@ -14,6 +14,14 @@ class Assets {
   /// assets/images/chat.svg
   static const String imagesChat = "assets/images/chat.svg";
 
+  /// Assets for imagesCommunityFilled
+  /// assets/images/CommunityFilled.svg
+  static const String imagesCommunityFilled = "assets/images/CommunityFilled.svg";
+
+  /// Assets for imagesCommunityNonFilled
+  /// assets/images/CommunityNonFilled.svg
+  static const String imagesCommunityNonFilled = "assets/images/CommunityNonFilled.svg";
+
   /// Assets for imagesEat
   /// assets/images/eat.svg
   static const String imagesEat = "assets/images/eat.svg";
@@ -34,6 +42,14 @@ class Assets {
   /// assets/images/heart_icon.svg
   static const String imagesHeartIcon = "assets/images/heart_icon.svg";
 
+  /// Assets for imagesHomeFilled
+  /// assets/images/HomeFilled.svg
+  static const String imagesHomeFilled = "assets/images/HomeFilled.svg";
+
+  /// Assets for imagesHomeNonFilled
+  /// assets/images/HomeNonFilled.svg
+  static const String imagesHomeNonFilled = "assets/images/HomeNonFilled.svg";
+
   /// Assets for imagesLookingForSupport
   /// assets/images/Looking_For_Support.png
   static const String imagesLookingForSupport = "assets/images/Looking_For_Support.png";
@@ -41,6 +57,14 @@ class Assets {
   /// Assets for imagesLookout
   /// assets/images/lookout.svg
   static const String imagesLookout = "assets/images/lookout.svg";
+
+  /// Assets for imagesMedicalSummaryFilled
+  /// assets/images/MedicalSummaryFilled.svg
+  static const String imagesMedicalSummaryFilled = "assets/images/MedicalSummaryFilled.svg";
+
+  /// Assets for imagesMedicalSummaryNonFilled
+  /// assets/images/MedicalSummaryNonFilled.svg
+  static const String imagesMedicalSummaryNonFilled = "assets/images/MedicalSummaryNonFilled.svg";
 
   /// Assets for imagesPerson
   /// assets/images/person.svg
@@ -61,6 +85,14 @@ class Assets {
   /// Assets for imagesSecondonbaordingillustration
   /// assets/images/Secondonbaordingillustration.png
   static const String imagesSecondonbaordingillustration = "assets/images/Secondonbaordingillustration.png";
+
+  /// Assets for imagesSessionFilled
+  /// assets/images/SessionFilled.svg
+  static const String imagesSessionFilled = "assets/images/SessionFilled.svg";
+
+  /// Assets for imagesSessionNonFilled
+  /// assets/images/SessionNonFilled.svg
+  static const String imagesSessionNonFilled = "assets/images/SessionNonFilled.svg";
 
   /// Assets for imagesSomeBody
   /// assets/images/someBody.svg

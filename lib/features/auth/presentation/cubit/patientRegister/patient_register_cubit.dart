@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/core/utils/error.dart';
-import 'package:graduationproject/features/auth/data/models/register_response_model.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_state.dart';
 
 class PatientRegisterStateCubit extends Cubit<PatientRegisterState> {

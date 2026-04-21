@@ -5,6 +5,7 @@ import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
+import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_cubit.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +16,7 @@ void main() async{
         BlocProvider(create: (context) => PatientRegisterStateCubit()),
         BlocProvider(create: (context) => DoctorRegisterCubit()),
         BlocProvider(create: (context) => CareGiverRegisterCubit()),
+        BlocProvider(create: (context) => BottomBarCubit()),
       ],
       child: RehlaApp(),
     ),

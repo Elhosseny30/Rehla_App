@@ -1,4 +1,3 @@
-
 abstract class AppRoutes {
   static const splash = '/';
   static const homeScreen = '/homeScreen';
@@ -19,9 +18,12 @@ abstract class AppRoutes {
   static const setupDoctorPassword = "/setupDoctorPassword";
   static const setupCareGiverPassword = "/setupCareGiverPassword";
   static const verificationEmailCareGiver = "/verificationEmailCareGiver";
-  static  const verificationEmailPatient = "/verificationEmailPatient";
+  static const verificationEmailPatient = "/verificationEmailPatient";
   static const verificationEmailDoctor = "/verificationEmailDoctor";
   static const patientHomeScreen = "/patienthomeScreen";
-  
+  static const mainNavigationBar = "/mainNavigationBar";
+  static const patientMedicalSummary = "/patientMedicalSummary";
+  static const patientCommunity ="/patientCommunity";
+  static const patientSession ="/patientSession";
   static const hekkoo = "/hekko";
 }
