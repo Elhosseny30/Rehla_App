@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_Each_Popular_post_container.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_Each_Popular_post_container.dart';
 
 class CustomPopularPostsContainer extends StatelessWidget {
   const CustomPopularPostsContainer({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_One_Container_M_D_S_L.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_One_Container_M_D_S_L.dart';
 
 class CustomContainerMedicineDietSessionLookout extends StatelessWidget {
   const CustomContainerMedicineDietSessionLookout({super.key});

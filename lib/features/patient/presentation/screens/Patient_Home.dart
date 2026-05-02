@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Container_Medicine_Diet_Session_Lookout.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_All_Emojis.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_App_Bar.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_Popular_Posts_Container.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Donate.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Row_Upcoming_See_All.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Uncoming_Events.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Container_Medicine_Diet_Session_Lookout.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_All_Emojis.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_App_Bar.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_Popular_Posts_Container.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Donate.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Row_Upcoming_See_All.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Uncoming_Events.dart';
 
 class PatientHomePage extends StatelessWidget {
   const PatientHomePage({super.key});

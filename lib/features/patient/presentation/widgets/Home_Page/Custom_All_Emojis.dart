@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Custom_One_Emoji.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_One_Emoji.dart';
 
 class CustomAllEmojis extends StatelessWidget {
   const CustomAllEmojis({super.key});
