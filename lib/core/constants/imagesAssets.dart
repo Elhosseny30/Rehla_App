@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/chat.svg
   static const String imagesChat = "assets/images/chat.svg";
 
+  /// Assets for imagesChatbotLogo
+  /// assets/images/chatbotLogo.svg
+  static const String imagesChatbotLogo = "assets/images/chatbotLogo.svg";
+
   /// Assets for imagesCommunityFilled
   /// assets/images/CommunityFilled.svg
   static const String imagesCommunityFilled = "assets/images/CommunityFilled.svg";
@@ -81,6 +85,14 @@ class Assets {
   /// Assets for imagesPlusIcon
   /// assets/images/plus_icon.svg
   static const String imagesPlusIcon = "assets/images/plus_icon.svg";
+
+  /// Assets for imagesRehlaLogo
+  /// assets/images/RehlaLogo.svg
+  static const String imagesRehlaLogo = "assets/images/RehlaLogo.svg";
+
+  /// Assets for imagesRehlaLogomarkPNG
+  /// assets/images/RehlaLogomarkPNG.png
+  static const String imagesRehlaLogomarkPNG = "assets/images/RehlaLogomarkPNG.png";
 
   /// Assets for imagesRehlatypo
   /// assets/images/Rehlatypo.png

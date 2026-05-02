@@ -1,10 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
+import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_cubit.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_state.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Home.dart';
@@ -73,6 +72,16 @@ class MainNavigationBar extends StatelessWidget {
               ),
             ],
           ),
+          floatingActionButton: state.currentIndex != 2
+              ? FloatingActionButton(
+                  shape: const CircleBorder(),
+                  backgroundColor: MyColors.whiteColor,
+                  onPressed: () {},
+                  child: SvgPicture.asset(
+                    Assets.imagesChatbotLogo,
+                  ), // أيقونة الشات بوت
+                )
+              : null,
         );
       },
     );

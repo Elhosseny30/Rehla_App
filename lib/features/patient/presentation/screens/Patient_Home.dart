@@ -3,12 +3,13 @@ import 'package:graduationproject/features/patient/presentation/widgets/Containe
 import 'package:graduationproject/features/patient/presentation/widgets/Custom_All_Emojis.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Custom_App_Bar.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Custom_Popular_Posts_Container.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Donate.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Row_Upcoming_See_All.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Uncoming_Events.dart';
 
 class PatientHomePage extends StatelessWidget {
   const PatientHomePage({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     print("Home");
@@ -31,8 +32,8 @@ class PatientHomePage extends StatelessWidget {
               Divider(indent: 30, endIndent: 30, thickness: 0.5),
               SizedBox(height: 15),
               CustomPopularPostsContainer(),
-
-              SizedBox(height: 15),
+              SizedBox(height: 25),
+              Donate(),
               
             ],
           ),
