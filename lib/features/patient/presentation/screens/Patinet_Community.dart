@@ -5,6 +5,7 @@ class PatientCommunity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Community");
     return Scaffold(
       body: Column(
         children: [

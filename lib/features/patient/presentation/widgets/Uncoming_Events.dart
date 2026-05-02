@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
-import 'package:graduationproject/features/patient/model/upcomingEvents.dart';
+import 'package:graduationproject/features/patient/model/upcoming_Events.dart';
 
 class UncomingEvents extends StatelessWidget {
   UncomingEvents({super.key});

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 
 class CustomOneEmoji extends StatelessWidget {

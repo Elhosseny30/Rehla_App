@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class PatientMedicalSummary extends StatelessWidget {
-  PatientMedicalSummary({super.key});
-  int currentIndex = 0;
+  const PatientMedicalSummary({super.key});
+  
   @override
   Widget build(BuildContext context) {
+    print("Medical");
     return Scaffold(
       body: Column(
         children: [

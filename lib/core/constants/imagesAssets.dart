@@ -66,6 +66,14 @@ class Assets {
   /// assets/images/MedicalSummaryNonFilled.svg
   static const String imagesMedicalSummaryNonFilled = "assets/images/MedicalSummaryNonFilled.svg";
 
+  /// Assets for imagesMentalhealthimage
+  /// assets/images/mentalhealthimage.png
+  static const String imagesMentalhealthimage = "assets/images/mentalhealthimage.png";
+
+  /// Assets for imagesNutration
+  /// assets/images/Nutration.png
+  static const String imagesNutration = "assets/images/Nutration.png";
+
   /// Assets for imagesPerson
   /// assets/images/person.svg
   static const String imagesPerson = "assets/images/person.svg";
@@ -97,6 +105,14 @@ class Assets {
   /// Assets for imagesSomeBody
   /// assets/images/someBody.svg
   static const String imagesSomeBody = "assets/images/someBody.svg";
+
+  /// Assets for imagesSupportGroup
+  /// assets/images/supportGroup.png
+  static const String imagesSupportGroup = "assets/images/supportGroup.png";
+
+  /// Assets for imagesTestSur
+  /// assets/images/Test_Sur.png
+  static const String imagesTestSur = "assets/images/Test_Sur.png";
 
   /// Assets for imagesThirdonbaordingillustration
   /// assets/images/Thirdonbaordingillustration.png

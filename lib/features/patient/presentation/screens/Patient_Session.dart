@@ -5,12 +5,9 @@ class PatientSession extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Session");
     return Scaffold(
-      body: Column(
-        children: [
-          Center(child:Text("Session")),
-        ],
-      ),
+      body: Column(children: [Center(child: Text("Session"))]),
     );
   }
 }
