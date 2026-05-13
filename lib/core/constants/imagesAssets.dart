@@ -34,6 +34,14 @@ class Assets {
   /// assets/images/Firstonbaordingillustration.png
   static const String imagesFirstonbaordingillustration = "assets/images/Firstonbaordingillustration.png";
 
+  /// Assets for imagesFlower
+  /// assets/images/flower.svg
+  static const String imagesFlower = "assets/images/flower.svg";
+
+  /// Assets for imagesFoodHeat
+  /// assets/images/FoodHeat.svg
+  static const String imagesFoodHeat = "assets/images/FoodHeat.svg";
+
   /// Assets for imagesHappy
   /// assets/images/Happy.png
   static const String imagesHappy = "assets/images/Happy.png";
@@ -45,6 +53,10 @@ class Assets {
   /// Assets for imagesHeartIcon
   /// assets/images/heart_icon.svg
   static const String imagesHeartIcon = "assets/images/heart_icon.svg";
+
+  /// Assets for imagesHeartNotfilled
+  /// assets/images/heartNotfilled.svg
+  static const String imagesHeartNotfilled = "assets/images/heartNotfilled.svg";
 
   /// Assets for imagesHomeFilled
   /// assets/images/HomeFilled.svg
@@ -121,6 +133,10 @@ class Assets {
   /// Assets for imagesSupportGroup
   /// assets/images/supportGroup.png
   static const String imagesSupportGroup = "assets/images/supportGroup.png";
+
+  /// Assets for imagesTelegram
+  /// assets/images/telegram.svg
+  static const String imagesTelegram = "assets/images/telegram.svg";
 
   /// Assets for imagesTestSur
   /// assets/images/Test_Sur.png

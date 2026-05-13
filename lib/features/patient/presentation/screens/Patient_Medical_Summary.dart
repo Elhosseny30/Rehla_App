@@ -3,13 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Container_Medicine_Diet_Session_Lookout.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_All_Emojis.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_App_Bar.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Custom_Popular_Posts_Container.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Donate.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Row_Upcoming_See_All.dart';
-import 'package:graduationproject/features/patient/presentation/widgets/Home_Page/Uncoming_Events.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Cunstom_Container_Daily_Care_Completion.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Container_App_Bar_Medical_Summary.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Medical_Summary_container.dart';
 
 class PatientMedicalSummary extends StatelessWidget {
   const PatientMedicalSummary({super.key});
@@ -24,63 +20,223 @@ class PatientMedicalSummary extends StatelessWidget {
           child: SafeArea(
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.only(bottom: 12, top: 12),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: MyColors.whiteColor,
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.grey.withOpacity(0.2),
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                  child: SafeArea(
-                    bottom: false,
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 30,
-                          child: SvgPicture.asset(
-                            Assets.imagesPerson,
-                            height: 45,
-                            width: 45,
+                CustomContainerAppBarMedicalSummary(),
+                SizedBox(height: 15),
+                CustomMedicalSummaryContainer(),
+                SizedBox(height: 10),
+                CunstomContainerDailyCareCompletion(),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: MyColors.whiteColor,
+                          borderRadius: BorderRadius.circular(18),
+                          border: Border.all(
+                            color: MyColors.blackColor.withOpacity(0.1),
                           ),
                         ),
-
-                        Column(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomWelcomeTextWidget(
-                              text: "Basma's care",
-                              size: 20,
-                              fontWeight: FontWeight.w500,
+                              text: "Medicataion",
+                              size: 18,
+                              fontWeight: FontWeight.w400,
                               color: MyColors.mainColor,
                             ),
                             CustomWelcomeTextWidget(
-                              text: "3 daily tasks",
-                              size: 12,
-                              fontWeight: FontWeight.w500,
-                              color: MyColors.mainColor,
+                              text: "Next dose",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            CustomWelcomeTextWidget(
+                              text: "02:30 pm",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    padding: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: MyColors.babyPink,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      Assets.images7abaia,
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 4),
+                                Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: MyColors.babyPink,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: SvgPicture.asset(
+                                    Assets.imagesTelegram,
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        Spacer(),
-                        SvgPicture.asset(
-                          Assets.imagesChat,
-                          height: 50,
-                          width: 50,
-                        ),
-                        SvgPicture.asset(
-                          Assets.imagesBell,
-                          height: 50,
-                          width: 50,
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        // margin: EdgeInsets.symmetric(horizontal: 8),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: MyColors.whiteColor,
+                          borderRadius: BorderRadius.circular(18),
+                          border: Border.all(
+                            color: MyColors.blackColor.withOpacity(0.1),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomWelcomeTextWidget(
+                              text: "Nutrition",
+                              size: 18,
+                              fontWeight: FontWeight.w400,
+                              color: MyColors.mainColor,
+                            ),
+                            CustomWelcomeTextWidget(
+                              text: "View today's",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            CustomWelcomeTextWidget(
+                              text: "diet plan",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    padding: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: MyColors.babyPink,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      Assets.imagesFoodHeat,
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 4),
+                                Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: MyColors.babyPink,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: SvgPicture.asset(
+                                    Assets.imagesTelegram,
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: MyColors.whiteColor,
+                          borderRadius: BorderRadius.circular(18),
+                          border: Border.all(
+                            color: MyColors.blackColor.withOpacity(0.1),
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomWelcomeTextWidget(
+                              text: "Daily check",
+                              size: 18,
+                              fontWeight: FontWeight.w400,
+                              color: MyColors.mainColor,
+                            ),
+                            CustomWelcomeTextWidget(
+                              text: "Log your",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            CustomWelcomeTextWidget(
+                              text: "symptoms",
+                              size: 16,
+                              fontWeight: FontWeight.w300,
+                              color: MyColors.blackColor,
+                            ),
+                            SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    padding: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: MyColors.babyPink,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      Assets.imagesFlower,
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 4),
+                                Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: MyColors.babyPink,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: SvgPicture.asset(
+                                    Assets.imagesTelegram,
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
