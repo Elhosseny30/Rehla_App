@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 class AuthAppFunctions {
   String? isEmptyNull(String? value) {
     if (value == null || value.isEmpty) {
@@ -90,6 +92,43 @@ class AuthAppFunctions {
       return "Invalid Governorate Code";
     }
 
-    return null; // ✅ الرقم صحيح
+    return null; 
+  }
+
+
+  String handleDioError(DioException e) {
+    switch (e.type) {
+      case DioExceptionType.connectionTimeout:
+      case DioExceptionType.sendTimeout:
+      case DioExceptionType.receiveTimeout:
+        return "Connection Time is end..check your internet";
+
+      case DioExceptionType.badResponse:
+        // هنا بنشوف الـ Status Code اللي راجع من الباك إند
+        final statusCode = e.response?.statusCode;
+
+        if (statusCode == 400) {
+          return "Bad Request";
+        } else if (statusCode == 401) {
+          return "Unauthorized)";
+        } else if (statusCode == 403) {
+          return "Forbidden";
+        } else if (statusCode == 404) {
+          return "Not Found";
+        } else if (statusCode == 500) {
+          return "Server Error)";
+        }
+        return "Error in Server: $statusCode";
+
+      case DioExceptionType.cancel:
+        return "Request is canceled";
+
+      case DioExceptionType.connectionError:
+        return "There is no internet";
+
+      case DioExceptionType.unknown:
+      default:
+        return "unexcpected error";
+    }
   }
 }

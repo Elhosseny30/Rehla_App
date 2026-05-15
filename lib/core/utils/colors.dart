@@ -9,4 +9,5 @@ abstract class MyColors {
   static const blueColor = Color(0xff2D69E2);
   static const greenColor = Color(0xff5BBAAE);
   static const babyPink = Color(0xfffff2f9);
+  static const blurPink = Color.fromARGB(255, 255, 233, 245);
 }

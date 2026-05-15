@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/constants/imagesAssets.dart';
+import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_cubit.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_state.dart';
@@ -76,10 +78,10 @@ class MainNavigationBar extends StatelessWidget {
               ? FloatingActionButton(
                   shape: const CircleBorder(),
                   backgroundColor: MyColors.whiteColor,
-                  onPressed: () {},
-                  child: SvgPicture.asset(
-                    Assets.imagesChatbotLogo,
-                  ), // أيقونة الشات بوت
+                  onPressed: () {
+                    (context).push(AppRoutes.chatBot);
+                  },
+                  child: SvgPicture.asset(Assets.imagesChatbotLogo),
                 )
               : null,
         );

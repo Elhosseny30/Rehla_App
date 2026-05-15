@@ -25,5 +25,6 @@ abstract class AppRoutes {
   static const patientMedicalSummary = "/patientMedicalSummary";
   static const patientCommunity ="/patientCommunity";
   static const patientSession ="/patientSession";
+  static const chatBot ="/chatBot";
   static const hekkoo = "/hekko";
 }

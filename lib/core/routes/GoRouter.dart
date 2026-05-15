@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduationproject/core/routes/appRoutes.dart';
+import 'package:graduationproject/features/ChatBot/presentation/screens/Chat_Bot.dart';
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/CareGiverScreen.dart';
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/SetUpCareGiverPassword.dart';
 import 'package:graduationproject/features/auth/presentation/screens/CareGiverScreens/infoCareGiverThree.dart';
@@ -109,16 +111,16 @@ final GoRouter router = GoRouter(
       builder: (context, state) => VerificationEmailDoctor(),
     ),
 
-    GoRoute(path: AppRoutes.login, builder: (context, state) => LoginScreen()),
-
     GoRoute(
       path: AppRoutes.mainNavigationBar,
       builder: (context, state) => MainNavigationBar(),
     ),
+
     GoRoute(
       path: AppRoutes.patientHomeScreen,
       builder: (context, state) => PatientHomePage(),
     ),
+
     GoRoute(
       path: AppRoutes.patientMedicalSummary,
       builder: (context, state) => PatientMedicalSummary(),
@@ -130,6 +132,35 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: AppRoutes.patientSession,
       builder: (context, state) => PatientSession(),
+    ),
+
+    GoRoute(
+      path: AppRoutes.chatBot,
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          key: state.pageKey,
+          transitionDuration: const Duration(
+            milliseconds: 1000,
+          ), 
+          reverseTransitionDuration: const Duration(milliseconds: 500),
+          child:  ChatBot(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(0.0, 1.0);
+            const end = Offset.zero;
+            const curve = Curves.easeInOutQuart; 
+
+            var tween = Tween(
+              begin: begin,
+              end: end,
+            ).chain(CurveTween(curve: curve));
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+        );
+      },
     ),
     GoRoute(
       path: AppRoutes.hekkoo,
