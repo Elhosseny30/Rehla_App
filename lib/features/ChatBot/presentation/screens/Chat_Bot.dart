@@ -16,7 +16,7 @@ class ChatBot extends StatelessWidget {
       onPopInvoked: (bool didPop) {
         if (didPop) return;
 
-        context.read<ChatBotCubit>().resetChat();
+        context.read<ChatBotCubit>().saveCurrentChatToHistory();
         context.pop();
       },
       child: Scaffold(

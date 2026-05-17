@@ -1,8 +1,9 @@
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/core/utils/functions.dart';
 import 'package:graduationproject/features/ChatBot/model/ChatBotModel.dart';
+import 'package:graduationproject/features/ChatBot/model/Chat_Bot_Old_Model.dart';
 
 part 'chat_bot_state.dart';
 
@@ -10,6 +11,10 @@ class ChatBotCubit extends Cubit<ChatBotState> {
   ChatBotCubit() : super(ChatBotInitial());
 
   List<ChatBotModel> messages = [];
+
+  List<ChatBotOldModel> chatHistory = [];
+  String currentChatTitle = "New Chat";
+  int? currentChatIndex;
 
   Future<void> sendMessageChatBot(
     String textMessage,
@@ -45,8 +50,46 @@ class ChatBotCubit extends Cubit<ChatBotState> {
     }
   }
 
-  void resetChat() {
+  void saveCurrentChatToHistory() {
+    if (messages.isNotEmpty) {
+      String title = messages.first.messages;
+      if (title.length > 25) {
+        title = "${title.substring(0, 25)}....";
+      }
+      if (currentChatIndex != null) {
+        chatHistory[currentChatIndex!] = ChatBotOldModel(
+          title: title,
+          oldChatMessages: List.from(messages),
+        );
+      } else {
+        chatHistory.add(
+          ChatBotOldModel(title: title, oldChatMessages: List.from(messages)),
+        );
+      }
+    }
+
     messages.clear();
+    currentChatTitle = "New Chat";
     emit(ChatBotInitial());
   }
+
+  void loadChatFromHistory(ChatBotOldModel session) {
+    messages = List.from(session.oldChatMessages);
+    currentChatTitle = session.title;
+    currentChatIndex = chatHistory.indexOf(session);
+    emit(ChatBotSuccess());
+  }
+
+  void startNewChat() {
+    saveCurrentChatToHistory();
+    messages.clear();
+    currentChatTitle = 'New Chat';
+    currentChatIndex = null;
+    emit(ChatBotInitial());
+  }
+
+  // void resetChat() {
+  //   messages.clear();
+  //   emit(ChatBotInitial());
+  // }
 }
