@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for images7abaia
   /// assets/images/7abaia.svg
   static const String images7abaia = "assets/images/7abaia.svg";
@@ -20,11 +20,13 @@ class Assets {
 
   /// Assets for imagesCommunityFilled
   /// assets/images/CommunityFilled.svg
-  static const String imagesCommunityFilled = "assets/images/CommunityFilled.svg";
+  static const String imagesCommunityFilled =
+      "assets/images/CommunityFilled.svg";
 
   /// Assets for imagesCommunityNonFilled
   /// assets/images/CommunityNonFilled.svg
-  static const String imagesCommunityNonFilled = "assets/images/CommunityNonFilled.svg";
+  static const String imagesCommunityNonFilled =
+      "assets/images/CommunityNonFilled.svg";
 
   /// Assets for imagesEat
   /// assets/images/eat.svg
@@ -32,7 +34,8 @@ class Assets {
 
   /// Assets for imagesFirstonbaordingillustration
   /// assets/images/Firstonbaordingillustration.png
-  static const String imagesFirstonbaordingillustration = "assets/images/Firstonbaordingillustration.png";
+  static const String imagesFirstonbaordingillustration =
+      "assets/images/Firstonbaordingillustration.png";
 
   /// Assets for imagesFlower
   /// assets/images/flower.svg
@@ -48,7 +51,8 @@ class Assets {
 
   /// Assets for imagesHealthiconsRibbonOutline
   /// assets/images/healthicons_ribbon-outline.svg
-  static const String imagesHealthiconsRibbonOutline = "assets/images/healthicons_ribbon-outline.svg";
+  static const String imagesHealthiconsRibbonOutline =
+      "assets/images/healthicons_ribbon-outline.svg";
 
   /// Assets for imagesHeartIcon
   /// assets/images/heart_icon.svg
@@ -68,7 +72,8 @@ class Assets {
 
   /// Assets for imagesLookingForSupport
   /// assets/images/Looking_For_Support.png
-  static const String imagesLookingForSupport = "assets/images/Looking_For_Support.png";
+  static const String imagesLookingForSupport =
+      "assets/images/Looking_For_Support.png";
 
   /// Assets for imagesLookout
   /// assets/images/lookout.svg
@@ -76,15 +81,18 @@ class Assets {
 
   /// Assets for imagesMedicalSummaryFilled
   /// assets/images/MedicalSummaryFilled.svg
-  static const String imagesMedicalSummaryFilled = "assets/images/MedicalSummaryFilled.svg";
+  static const String imagesMedicalSummaryFilled =
+      "assets/images/MedicalSummaryFilled.svg";
 
   /// Assets for imagesMedicalSummaryNonFilled
   /// assets/images/MedicalSummaryNonFilled.svg
-  static const String imagesMedicalSummaryNonFilled = "assets/images/MedicalSummaryNonFilled.svg";
+  static const String imagesMedicalSummaryNonFilled =
+      "assets/images/MedicalSummaryNonFilled.svg";
 
   /// Assets for imagesMentalhealthimage
   /// assets/images/mentalhealthimage.png
-  static const String imagesMentalhealthimage = "assets/images/mentalhealthimage.png";
+  static const String imagesMentalhealthimage =
+      "assets/images/mentalhealthimage.png";
 
   /// Assets for imagesNutration
   /// assets/images/Nutration.png
@@ -104,7 +112,8 @@ class Assets {
 
   /// Assets for imagesRehlaLogomarkPNG
   /// assets/images/RehlaLogomarkPNG.png
-  static const String imagesRehlaLogomarkPNG = "assets/images/RehlaLogomarkPNG.png";
+  static const String imagesRehlaLogomarkPNG =
+      "assets/images/RehlaLogomarkPNG.png";
 
   /// Assets for imagesRehlatypo
   /// assets/images/Rehlatypo.png
@@ -116,7 +125,8 @@ class Assets {
 
   /// Assets for imagesSecondonbaordingillustration
   /// assets/images/Secondonbaordingillustration.png
-  static const String imagesSecondonbaordingillustration = "assets/images/Secondonbaordingillustration.png";
+  static const String imagesSecondonbaordingillustration =
+      "assets/images/Secondonbaordingillustration.png";
 
   /// Assets for imagesSessionFilled
   /// assets/images/SessionFilled.svg
@@ -124,7 +134,8 @@ class Assets {
 
   /// Assets for imagesSessionNonFilled
   /// assets/images/SessionNonFilled.svg
-  static const String imagesSessionNonFilled = "assets/images/SessionNonFilled.svg";
+  static const String imagesSessionNonFilled =
+      "assets/images/SessionNonFilled.svg";
 
   /// Assets for imagesSomeBody
   /// assets/images/someBody.svg
@@ -144,7 +155,8 @@ class Assets {
 
   /// Assets for imagesThirdonbaordingillustration
   /// assets/images/Thirdonbaordingillustration.png
-  static const String imagesThirdonbaordingillustration = "assets/images/Thirdonbaordingillustration.png";
+  static const String imagesThirdonbaordingillustration =
+      "assets/images/Thirdonbaordingillustration.png";
 
   /// Assets for imagesTired
   /// assets/images/tired.png
@@ -153,5 +165,7 @@ class Assets {
   /// Assets for imagesWorried
   /// assets/images/Worried.png
   static const String imagesWorried = "assets/images/Worried.png";
-}
 
+  static const String token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzNjhkYTE4NC03NWQzLTRhMDctODk1Yy1lMGVhMWJmN2MwMjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNmNmFlYzRlLTNkYjQtNGIxYy1iMDA2LTA4MzkxZGQ2MDgxMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJrYXJlZW0gZWxob3NzZW55IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoia2FyZWVtLmVsaG9zc2VueTU3KzYyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlBhdGllbnQiLCJleHAiOjE3NzkxMzcxMjksImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4Ni8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODYvIn0.gKcktpeRptbPEhwFuNBocp8CfZ0XR0jUr0Td36i0N2w";
+}

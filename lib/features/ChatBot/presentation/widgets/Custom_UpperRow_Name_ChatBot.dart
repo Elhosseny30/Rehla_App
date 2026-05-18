@@ -38,7 +38,7 @@ class CustomUpperrowNameChatbot extends StatelessWidget {
                     return Container(
                       height:
                           MediaQuery.of(context).size.height *
-                          0.75, // ارتفاع مبدئي للتجربة
+                          .75, // ارتفاع مبدئي للتجربة
                       width: double.infinity,
                       decoration: const BoxDecoration(
                         color: Colors.white,
@@ -106,7 +106,7 @@ class CustomUpperrowNameChatbot extends StatelessWidget {
                                 return CustomContainerBottomSheet(
                                   session: context
                                       .read<ChatBotCubit>()
-                                      .chatHistory[index],
+                                      .chatHistory.reversed.toList()[index],
                                 );
                               },
                             ),

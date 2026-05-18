@@ -43,8 +43,12 @@ class ChatBotCubit extends Cubit<ChatBotState> {
       }
     } on DioException catch (e) {
       String errorMessage = AuthAppFunctions().handleDioError(e);
+
+      print("❌ Dio Error: ${e.response?.statusCode} - ${e.message}"); 
+      print("❌ Data from server: ${e.response?.data}");
       emit(ChatBotError(errorMessage));
     } catch (e) {
+      print("❌ Unexpected Error: ${e.toString()}");
       // 6. هندلة أي خطأ تاني برا الـ Dio (مثلاً مشكلة في تحويل الـ JSON أو كود ضرب)
       emit(ChatBotError("Unexcpected Error ${e.toString()}"));
     }

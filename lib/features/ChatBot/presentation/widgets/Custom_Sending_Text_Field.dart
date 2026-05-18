@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/ChatBot/presentation/cubit/chat_bot_cubit.dart';
 
@@ -86,7 +87,7 @@ class _CustomSendingTextFieldState extends State<CustomSendingTextField> {
                 onTap: () {
                   String textMessage = textController.text;
                   String patientId = "cf6aec4e-3db4-4b1c-b006-08391dd60812";
-                  String token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NGM1NTQ5Ny1hMDhjLTQwYzYtYjE0NC02YThmZDM5NmJiNmUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImNmNmFlYzRlLTNkYjQtNGIxYy1iMDA2LTA4MzkxZGQ2MDgxMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJrYXJlZW0gZWxob3NzZW55IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoia2FyZWVtLmVsaG9zc2VueTU3KzYyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlBhdGllbnQiLCJleHAiOjE3NzkwMjQ2NTcsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4Ni8iLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODYvIn0.h24aK61BFz_PhBt0THozp2nWTo5f58am7PGGuPHrfsg";
+                  String token = Assets.token;
                   if (textMessage.isNotEmpty) {
                     context.read<ChatBotCubit>().sendMessageChatBot(
                       textMessage,

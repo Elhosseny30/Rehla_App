@@ -35,18 +35,27 @@ class CustomScrolChatBot extends StatelessWidget {
     ),
     AnimatedBubble(
       delayInMillis: 1500,
-      child: const CustomChatBotFastMessage(messege: "Want any help?"),
+      child: const CustomChatBotFastMessage(
+        messege: "Want any help?",
+        patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
+        token: Assets.token,
+      ),
     ),
+
     AnimatedBubble(
       delayInMillis: 2000,
       child: const CustomChatBotFastMessage(
         messege: "set a reminder for meds or an appointment",
+        patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
+        token: Assets.token,
       ),
     ),
     AnimatedBubble(
       delayInMillis: 2500,
       child: const CustomChatBotFastMessage(
         messege: "Create you nutrition plan",
+        patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
+        token: Assets.token,
       ),
     ),
     AnimatedBubble(
@@ -88,7 +97,6 @@ class CustomScrolChatBot extends StatelessWidget {
                 );
               },
             );
-
           }
 
           return Column(
@@ -99,7 +107,7 @@ class CustomScrolChatBot extends StatelessWidget {
                   itemCount: stateCubit.messages.length,
                   itemBuilder: (context, index) {
                     final message = stateCubit.messages[index];
-                    
+
                     // هنا بنعرض الرسالة الحقيقية
                     return RealChatBubble(
                       text: message.messages,
@@ -108,22 +116,23 @@ class CustomScrolChatBot extends StatelessWidget {
                   },
                 ),
               ),
-              
+
               // عرض "Rafek is typing..." لو الحالة Loading
               if (state is ChatBotLoading)
                 const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text("Rafek is typing...", style: TextStyle(color: Colors.grey)),
+                  child: Text(
+                    "Rafek is typing...",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ),
             ],
           );
-
         },
       ),
     );
   }
 }
-
 
 class RealChatBubble extends StatelessWidget {
   final String text;
@@ -139,10 +148,14 @@ class RealChatBubble extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: isUser ? Colors.grey[200] : MyColors.blurPink, 
+          color: isUser ? Colors.grey[200] : MyColors.blurPink,
           borderRadius: BorderRadius.circular(16).copyWith(
-            bottomRight: isUser ? const Radius.circular(0) : const Radius.circular(16),
-            bottomLeft: !isUser ? const Radius.circular(0) : const Radius.circular(16),
+            bottomRight: isUser
+                ? const Radius.circular(0)
+                : const Radius.circular(16),
+            bottomLeft: !isUser
+                ? const Radius.circular(0)
+                : const Radius.circular(16),
           ),
         ),
         child: Text(
