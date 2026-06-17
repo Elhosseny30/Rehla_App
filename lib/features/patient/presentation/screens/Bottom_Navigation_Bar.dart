@@ -8,10 +8,10 @@ import 'package:graduationproject/core/routes/appRoutes.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_cubit.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_state.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Community/Patinet_Community.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Home.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Medical_Summary.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Session.dart';
-import 'package:graduationproject/features/patient/presentation/screens/Patinet_Community.dart';
 
 class MainNavigationBar extends StatelessWidget {
   MainNavigationBar({super.key});

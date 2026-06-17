@@ -23,10 +23,10 @@ import 'package:graduationproject/features/auth/presentation/screens/patientScre
 import 'package:graduationproject/features/auth/presentation/screens/signUp.dart';
 import 'package:graduationproject/features/onboarding/presentation/screens/onboardingscreen.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Bottom_Navigation_Bar.dart';
+import 'package:graduationproject/features/patient/presentation/screens/Community/Patinet_Community.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Home.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Medical_Summary.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Patient_Session.dart';
-import 'package:graduationproject/features/patient/presentation/screens/Patinet_Community.dart';
 import 'package:graduationproject/homeScreen.dart';
 
 final GoRouter router = GoRouter(

@@ -92,9 +92,8 @@ class AuthAppFunctions {
       return "Invalid Governorate Code";
     }
 
-    return null; 
+    return null;
   }
-
 
   String handleDioError(DioException e) {
     switch (e.type) {
@@ -131,4 +130,6 @@ class AuthAppFunctions {
         return "unexcpected error";
     }
   }
+
+  //final String token = "";
 }

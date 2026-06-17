@@ -87,7 +87,8 @@ class _CustomSendingTextFieldState extends State<CustomSendingTextField> {
                 onTap: () {
                   String textMessage = textController.text;
                   String patientId = "cf6aec4e-3db4-4b1c-b006-08391dd60812";
-                  String token = Assets.token;
+                  /**DOMEEEMEMEMEME */
+                  String token = "Assets.token";
                   if (textMessage.isNotEmpty) {
                     context.read<ChatBotCubit>().sendMessageChatBot(
                       textMessage,

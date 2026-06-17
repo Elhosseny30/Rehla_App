@@ -38,7 +38,8 @@ class CustomScrolChatBot extends StatelessWidget {
       child: const CustomChatBotFastMessage(
         messege: "Want any help?",
         patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
-        token: Assets.token,
+        /// doing
+        token: "Assets.token",
       ),
     ),
 
@@ -47,7 +48,8 @@ class CustomScrolChatBot extends StatelessWidget {
       child: const CustomChatBotFastMessage(
         messege: "set a reminder for meds or an appointment",
         patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
-        token: Assets.token,
+        /// doing
+        token: "Assets.token",
       ),
     ),
     AnimatedBubble(
@@ -55,7 +57,8 @@ class CustomScrolChatBot extends StatelessWidget {
       child: const CustomChatBotFastMessage(
         messege: "Create you nutrition plan",
         patientId: "cf6aec4e-3db4-4b1c-b006-08391dd60812",
-        token: Assets.token,
+        /// doing
+        token: "Assets.token",
       ),
     ),
     AnimatedBubble(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Cunstom_Container_Daily_Care_Completion.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Container_App_Bar_Medical_Summary.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Container_Care_Team.dart';
+import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Container_Lookout_Prediction.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Medical_Summary_container.dart';
 import 'package:graduationproject/features/patient/presentation/widgets/Medical_Summary/Custom_Row_Medication_Nutiration_Daily_Chaeck.dart';
 
@@ -22,9 +24,15 @@ class PatientMedicalSummary extends StatelessWidget {
                 CustomMedicalSummaryContainer(),
                 SizedBox(height: 10),
                 CunstomContainerDailyCareCompletion(),
-                CustomRowMedicationNutirationDailyChaeck(),
-                
-            
+                CustomRowMedicationNutirationDailyCheck(),
+                SizedBox(height: 15),
+                CustomContainerCareTeam(),
+
+                SizedBox(height: 15),
+
+                CustomContainerLookoutPrediction(),
+
+                SizedBox(height: 30),
               ],
             ),
           ),

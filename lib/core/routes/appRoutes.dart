@@ -23,8 +23,8 @@ abstract class AppRoutes {
   static const patientHomeScreen = "/patienthomeScreen";
   static const mainNavigationBar = "/mainNavigationBar";
   static const patientMedicalSummary = "/patientMedicalSummary";
-  static const patientCommunity ="/patientCommunity";
-  static const patientSession ="/patientSession";
-  static const chatBot ="/chatBot";
+  static const patientCommunity = "/patientCommunity";
+  static const patientSession = "/patientSession";
+  static const chatBot = "/chatBot";
   static const hekkoo = "/hekko";
 }

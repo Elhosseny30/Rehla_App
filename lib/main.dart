@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduationproject/core/Routes/GoRouter.dart';
 import 'package:graduationproject/core/utils/DioHelper.dart';
 import 'package:graduationproject/features/ChatBot/presentation/cubit/chat_bot_cubit.dart';
-import 'package:graduationproject/features/ChatBot/presentation/screens/Chat_Bot.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Register/cubit/care_giver_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';

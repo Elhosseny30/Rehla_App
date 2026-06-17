@@ -4,8 +4,8 @@ import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
 
-class CustomRowMedicationNutirationDailyChaeck extends StatelessWidget {
-  const CustomRowMedicationNutirationDailyChaeck({super.key});
+class CustomRowMedicationNutirationDailyCheck extends StatelessWidget {
+  const CustomRowMedicationNutirationDailyCheck({super.key});
 
   @override
   Widget build(BuildContext context) {
