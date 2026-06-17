@@ -7,6 +7,9 @@ class CustomHomePosts extends StatelessWidget {
    CustomHomePosts({super.key});
 final List<PostModel> posts = [
     PostModel(
+      time : "10 minutes ago",
+      groupName: null,
+      groupImageUrl: null,
       id: 1,
       content:
           "Good nutrition is half the cure 🌿🍅. Adding natural colors to your daily meals gives your body the vitamins it needs to stay strong and restore energy during and after treatments. Make a fresh salad a daily habit on your table! ✨",
@@ -27,6 +30,9 @@ final List<PostModel> posts = [
       reactionCounts: {},
     ),
     PostModel(
+      time : "22 minutes ago",
+      groupName: null,
+      groupImageUrl: null,
       id: 2,
       content:
           "Sometimes, the most powerful healing comes from simply knowing someone is there to hold your hand. 🫂 Support groups remind us that our fears are shared and our victories are celebrated together. Tag someone who has been your rock during your journey! ✨",
@@ -45,6 +51,9 @@ final List<PostModel> posts = [
       reactionCounts: {},
     ),
     PostModel(
+      time : "32 minutes ago",
+      groupName: null,
+      groupImageUrl: null,
       id: 2,
       content: "A quick reminder to all the brave women here: listening to your body is just as important as your treatment plan. If you are feeling unusually fatigued, please allow yourself to rest. Don't hesitate to communicate any new symptoms with your medical team. We are here for you! 🩺💙",
       postType: "Story",
@@ -63,6 +72,9 @@ final List<PostModel> posts = [
     ),
 
     PostModel(
+      time : "40 minutes ago",
+      groupName: null,
+      groupImageUrl: null,
       id: 2,
       content: "Today was a bit of a heavy day, honestly. Sometimes the anxiety creeps in, but reading everyone's posts here on Rehla reminds me that I'm part of an incredible sisterhood. Just a reminder to anyone struggling today: be gentle with yourself. We are taking this one day at a time. 🌸💪",
       postType: "Story",
@@ -81,6 +93,9 @@ final List<PostModel> posts = [
     ),
 
     PostModel(
+      time : "45 minutes ago",
+      groupName: null,
+      groupImageUrl: null,
       id: 2,
       content: "Gentle movements can make a huge difference in our recovery. 🧘‍♀️ Stretching helps relieve the physical tension from treatments and brings a moment of peace to a busy mind. Remember to listen to your body and go at your own pace today. ✨",
       postType: "Story",

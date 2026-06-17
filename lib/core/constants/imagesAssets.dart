@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/7abaia.svg
   static const String images7abaia = "assets/images/7abaia.svg";
 
+  /// Assets for imagesAvaterfourthgroupphoto
+  /// assets/images/avaterfourthgroupphoto.jpg
+  static const String imagesAvaterfourthgroupphoto = "assets/images/avaterfourthgroupphoto.jpg";
+
   /// Assets for imagesBell
   /// assets/images/bell.svg
   static const String imagesBell = "assets/images/bell.svg";
@@ -26,6 +30,10 @@ class Assets {
   /// assets/images/CommunityNonFilled.svg
   static const String imagesCommunityNonFilled = "assets/images/CommunityNonFilled.svg";
 
+  /// Assets for imagesDrAkramAhmed
+  /// assets/images/DrAkramAhmed.jpg
+  static const String imagesDrAkramAhmed = "assets/images/DrAkramAhmed.jpg";
+
   /// Assets for imagesEat
   /// assets/images/eat.svg
   static const String imagesEat = "assets/images/eat.svg";
@@ -38,9 +46,17 @@ class Assets {
   /// assets/images/Fifth_Post.jpg
   static const String imagesFifthPost = "assets/images/Fifth_Post.jpg";
 
+  /// Assets for imagesFirstPersonGroupOne
+  /// assets/images/FirstPersonGroupOne.jpg
+  static const String imagesFirstPersonGroupOne = "assets/images/FirstPersonGroupOne.jpg";
+
   /// Assets for imagesFirstPostBasmaAhmed
   /// assets/images/First_Post_Basma_Ahmed.jpg
   static const String imagesFirstPostBasmaAhmed = "assets/images/First_Post_Basma_Ahmed.jpg";
+
+  /// Assets for imagesFirstPostGroupOne
+  /// assets/images/FirstPostGroupOne.jpg
+  static const String imagesFirstPostGroupOne = "assets/images/FirstPostGroupOne.jpg";
 
   /// Assets for imagesFirstonbaordingillustration
   /// assets/images/Firstonbaordingillustration.png
@@ -57,6 +73,10 @@ class Assets {
   /// Assets for imagesFourthPostNadaAhmed
   /// assets/images/Fourth_Post_Nada_Ahmed.jpg
   static const String imagesFourthPostNadaAhmed = "assets/images/Fourth_Post_Nada_Ahmed.jpg";
+
+  /// Assets for imagesFourthpostgropohoto
+  /// assets/images/fourthpostgropohoto.jpg
+  static const String imagesFourthpostgropohoto = "assets/images/fourthpostgropohoto.jpg";
 
   /// Assets for imagesGroupPhotoFirstPost
   /// assets/images/GroupPhotoFirstPost.jpg
@@ -158,6 +178,14 @@ class Assets {
   /// assets/images/Secondonbaordingillustration.png
   static const String imagesSecondonbaordingillustration = "assets/images/Secondonbaordingillustration.png";
 
+  /// Assets for imagesSecondpostgroupphoto
+  /// assets/images/secondpostgroupphoto.jpg
+  static const String imagesSecondpostgroupphoto = "assets/images/secondpostgroupphoto.jpg";
+
+  /// Assets for imagesSeondpostgroupphoto
+  /// assets/images/seondpostgroupphoto.jpg
+  static const String imagesSeondpostgroupphoto = "assets/images/seondpostgroupphoto.jpg";
+
   /// Assets for imagesSerach
   /// assets/images/serach.svg
   static const String imagesSerach = "assets/images/serach.svg";
@@ -193,6 +221,10 @@ class Assets {
   /// Assets for imagesThirdonbaordingillustration
   /// assets/images/Thirdonbaordingillustration.png
   static const String imagesThirdonbaordingillustration = "assets/images/Thirdonbaordingillustration.png";
+
+  /// Assets for imagesThirdpostgroupohoto
+  /// assets/images/thirdpostgroupohoto.jpg
+  static const String imagesThirdpostgroupohoto = "assets/images/thirdpostgroupohoto.jpg";
 
   /// Assets for imagesTired
   /// assets/images/tired.png
