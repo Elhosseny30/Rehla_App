@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graduationproject/core/constants/imagesAssets.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/auth/presentation/widgets/WelcomeTextWidget.dart';
 
@@ -18,9 +17,10 @@ class CustomPhotoNameWhatMind extends StatelessWidget {
           child: Row(
             children: [
               // صورة اليوزر (تقدر تجيبها من الـ Cache أو بيانات اليوزر المسجلة)
-              const CircleAvatar(
+               CircleAvatar(
                 radius: 25,
-                backgroundImage: AssetImage(Assets.imagesProfilePhoto),
+                backgroundColor: Colors.grey.shade200,
+                child: const Icon(Icons.person, size: 40, color: Colors.grey),
               ),
               const SizedBox(width: 12),
               // عمود فيه الاسم وتحته الجملة
