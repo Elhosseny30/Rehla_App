@@ -7,6 +7,7 @@ import 'package:graduationproject/features/auth/presentation/cubit/care_giver_Re
 import 'package:graduationproject/features/auth/presentation/cubit/doctorRegister/doctor_register_cubit.dart';
 import 'package:graduationproject/features/auth/presentation/cubit/patientRegister/patient_register_cubit.dart';
 import 'package:graduationproject/features/patient/presentation/cubit/BottomBar/bottom_bar_cubit.dart';
+import 'package:graduationproject/features/patient/presentation/cubit/session_Screen/cubit/session_screen_cubit.dart';
 
 void main() async{
   print("ffff");
@@ -20,6 +21,7 @@ void main() async{
         BlocProvider(create: (context) => CareGiverRegisterCubit()),
         BlocProvider(create: (context) => BottomBarCubit()),
         BlocProvider(create: (context) => ChatBotCubit()),
+        BlocProvider(create: (context) => SessionsCubit()),
       ],
       child: RehlaApp(),
     ),

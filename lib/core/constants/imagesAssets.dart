@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/activityallgroupgirls.jpg
   static const String imagesActivityallgroupgirls = "assets/images/activityallgroupgirls.jpg";
 
+  /// Assets for imagesAmirsaad
+  /// assets/images/Amirsaad.jpg
+  static const String imagesAmirsaad = "assets/images/Amirsaad.jpg";
+
   /// Assets for imagesAvaterfourthgroupphoto
   /// assets/images/avaterfourthgroupphoto.jpg
   static const String imagesAvaterfourthgroupphoto = "assets/images/avaterfourthgroupphoto.jpg";
@@ -33,6 +37,18 @@ class Assets {
   /// Assets for imagesCommunityNonFilled
   /// assets/images/CommunityNonFilled.svg
   static const String imagesCommunityNonFilled = "assets/images/CommunityNonFilled.svg";
+
+  /// Assets for imagesDoctorahemdmohammed
+  /// assets/images/doctorahemdmohammed.jpg
+  static const String imagesDoctorahemdmohammed = "assets/images/doctorahemdmohammed.jpg";
+
+  /// Assets for imagesDoctoratefbasem
+  /// assets/images/doctoratefbasem.jpg
+  static const String imagesDoctoratefbasem = "assets/images/doctoratefbasem.jpg";
+
+  /// Assets for imagesDoctorbasmaatef
+  /// assets/images/doctorbasmaatef.jpg
+  static const String imagesDoctorbasmaatef = "assets/images/doctorbasmaatef.jpg";
 
   /// Assets for imagesDrAkramAhmed
   /// assets/images/DrAkramAhmed.jpg
@@ -138,6 +154,10 @@ class Assets {
   /// assets/images/mentalhealthimage.png
   static const String imagesMentalhealthimage = "assets/images/mentalhealthimage.png";
 
+  /// Assets for imagesMindfuless
+  /// assets/images/mindfuless.avif
+  static const String imagesMindfuless = "assets/images/mindfuless.avif";
+
   /// Assets for imagesNutration
   /// assets/images/Nutration.png
   static const String imagesNutration = "assets/images/Nutration.png";
@@ -201,6 +221,14 @@ class Assets {
   /// Assets for imagesSessionNonFilled
   /// assets/images/SessionNonFilled.svg
   static const String imagesSessionNonFilled = "assets/images/SessionNonFilled.svg";
+
+  /// Assets for imagesSessiononephoto
+  /// assets/images/sessiononephoto.jpg
+  static const String imagesSessiononephoto = "assets/images/sessiononephoto.jpg";
+
+  /// Assets for imagesSessiontwophoto
+  /// assets/images/sessiontwophoto.jpg
+  static const String imagesSessiontwophoto = "assets/images/sessiontwophoto.jpg";
 
   /// Assets for imagesSomeBody
   /// assets/images/someBody.svg
