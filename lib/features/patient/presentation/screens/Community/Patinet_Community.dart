@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/core/utils/colors.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Community/Patient_Community_Activity_Page.dart';
-import 'package:graduationproject/features/patient/presentation/screens/Community/Patient_Community_Friends_Page.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Community/Patient_Community_Groups_Page.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Community/Patient_Community_Home_Page.dart';
 import 'package:graduationproject/features/patient/presentation/screens/Community/Patient_Community_Profile_Page.dart';
@@ -12,9 +11,9 @@ class PatientCommunity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Community");
+   
     return DefaultTabController(
-      length: 5,
+      length: 4,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Scaffold(
@@ -43,7 +42,7 @@ class PatientCommunity extends StatelessWidget {
                 tabs: const [
                   Tab(text: "Home"),
                   Tab(text: "Groups"),
-                  Tab(text: "Friends"),
+          
                   Tab(text: "Activity"),
                   Tab(text: "Profile"),
                 ],
@@ -57,7 +56,7 @@ class PatientCommunity extends StatelessWidget {
                     
                     PatientCommunityHomePage(),
                     PatientCommunityGroupsPage(),
-                    PatientCommunityFriendsPage(),
+             
                     PatientCommunityActivityPage(),
                     PatientCommunityProfilePage(),
                   ],

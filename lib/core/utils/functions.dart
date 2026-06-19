@@ -131,5 +131,38 @@ class AuthAppFunctions {
     }
   }
 
+  String getActionTextActivityCommunity(String type) {
+    switch (type) {
+      case 'LIKE_POST':
+        return 'Liked Your Post';
+      case 'LIKED_COMMENT':
+        return 'Liked Your Comment';
+      case 'FOLLOW':
+        return 'Started Following You';
+      case 'SUGGEST_GROUP':
+        return 'Suggested Group';
+      case 'CONVERSATION':
+        return 'Sent you a message';
+      case 'MENTION':
+        return 'Mentioned you in a comment';
+      case 'SUGGEST_PERSON':
+        return 'Suggested for you';
+      default:
+        return 'Did something';
+    }
+  }
+
+  String getTimeAgoActivityModel(DateTime time) {
+    final difference = DateTime.now().difference(time);
+    if (difference.inMinutes > 0 && difference.inMinutes < 60) {
+      return '${difference.inMinutes} Minutes ago';
+    } else if (difference.inHours > 0 && difference.inHours < 24) {
+      return '${difference.inHours} Hours ago';
+    } else if (difference.inDays > 0) {
+      return '${difference.inDays} Days ago';
+    }
+    return 'Just now';
+  }
+
   //final String token = "";
 }
