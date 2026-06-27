@@ -1,16 +1,35 @@
-# graduationprojecttwo
+# Rehla - Healthcare Predictive System 🎗️
 
-A new Flutter project.
+## 📖 Overview
+**Rehla** is a specialized healthcare predictive system developed as a senior graduation project. Focused on recurrent breast cancer prediction, the platform seamlessly integrates advanced machine learning forecasting with a robust, intuitive mobile application engineered using Flutter and Dart. The system encompasses complete end-to-end development with real-world medical significance, designed to streamline patient flow and provide accessible support.
 
-## Getting Started
+## ✨ Key Features
+* **Recurrent Breast Cancer Prediction:** Integrates directly with advanced machine learning models to provide reliable forecasting and medical insights.
+* **Intelligent Companion Chatbot ("Rafiq"):** A built-in AI chatbot designed to enhance user interaction, answer queries, and provide accessible, on-demand support for patients.
+* **Secure Authentication & Patient Flow:** Features a fully authenticated user system with carefully designed, intuitive screens tailored specifically for a smooth patient journey.
+* **Local Server & Storage:** Utilizes containerized local server deployment alongside secure local data persistence for a fast and reliable user experience.
 
-This project is a starting point for a Flutter application.
+## 🛠️ Architecture & Technologies
 
-A few resources to get you started if this is your first Flutter project:
+### Mobile Development
+* **Framework:** Flutter / Dart
+* **Architecture:** Clean Architecture (ensuring high testability and separation of concerns)
+* **State Management:** BLoC / Cubit
+* **Local Storage:** SharedPreferences
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Networking & Infrastructure
+* **API Integration:** Dio (for efficient, scalable, and interceptor-enabled HTTP requests)
+* **Deployment & Environment:** Docker (for localized server deployment and containerized environments)
+* **Backend:** Advanced Machine Learning forecasting integration
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+
+### Prerequisites
+* Flutter SDK
+* Dart SDK
+* Docker Desktop (for local server deployment)
+
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YourUsername/Rehla.git](https://github.com/YourUsername/Rehla.git)
