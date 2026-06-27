@@ -32,4 +32,4 @@
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YourUsername/Rehla.git](https://github.com/YourUsername/Rehla.git)
+   git clone https://github.com/Elhosseny30/Rehla_App.git
